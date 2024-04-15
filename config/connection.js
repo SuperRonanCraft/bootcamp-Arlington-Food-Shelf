@@ -12,7 +12,7 @@ if (process.env.DB_URL) {
     {
       host: 'localhost',
       dialect: 'postgres',
-      logging: process.env.DB_DISABLE_LOGGING === 'false',
+      logging: process.env.DB_DISABLE_LOGGING === 'true' ? false : console.log,
     },
   );
 }

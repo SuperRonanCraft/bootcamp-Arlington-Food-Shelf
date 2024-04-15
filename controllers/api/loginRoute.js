@@ -3,19 +3,26 @@ const { User } = require('../../models/index');
 
 router.post('/', async (req, res) => {
   try {
+    const email = req.body.email;
+    if (!email) {
+      res.status(400).json({
+        message: 'missing `email` or `password` field',
+      });
+      return;
+    }
     const userData = await User.findOne({
       where: {
-        username: req.body.username,
+        email,
       },
     });
     if (!userData) {
-      res.status(400).json({ message: 'Incorrect username or password' });
+      res.status(400).json({ message: 'Incorrect email or password' });
       console.log('Bad Username');
       return;
     }
     const validPassword = userData.checkPassword(req.body.password);
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect username or password' });
+      res.status(400).json({ message: 'Incorrect email or password' });
       console.log('Bad Password');
       return;
     }
