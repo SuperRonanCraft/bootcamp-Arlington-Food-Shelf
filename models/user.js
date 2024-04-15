@@ -52,3 +52,6 @@ password: {
     
 }
 );
+
+
+module.exports = router;
