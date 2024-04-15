@@ -5,9 +5,12 @@ router.post('/', async (req, res) => {
   try {
     const email = req.body.email;
     if (!email) {
-      res.status(400).json({
-        message: 'missing `email` or `password` field',
-      });
+      res
+        .status(400)
+        .json({
+          loggedIn: false,
+          message: 'missing `email` or `password` field',
+        });
       return;
     }
     const userData = await User.findOne({
@@ -16,13 +19,17 @@ router.post('/', async (req, res) => {
       },
     });
     if (!userData) {
-      res.status(400).json({ message: 'Incorrect email or password' });
+      res
+        .status(400)
+        .json({ loggedIn: false, message: 'Incorrect email or password' });
       console.log('Bad Username');
       return;
     }
     const validPassword = userData.checkPassword(req.body.password);
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect email or password' });
+      res
+        .status(400)
+        .json({ loggedIn: false, message: 'Incorrect email or password' });
       console.log('Bad Password');
       return;
     }
