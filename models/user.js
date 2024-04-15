@@ -11,5 +11,6 @@ User.init({
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
- }
+ },
+ 
 });
