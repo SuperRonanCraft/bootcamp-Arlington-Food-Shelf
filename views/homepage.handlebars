@@ -1,0 +1,8 @@
+{{#each posts}}
+  <article>
+    <div class='post'>
+      <h2><a href='/posts/{{this.id}}'>{{this.title}}</a></h2>
+      <p>Posted on: {{format_date this.date_created}}</p>
+    </div>
+  </article>
+{{/each}}
