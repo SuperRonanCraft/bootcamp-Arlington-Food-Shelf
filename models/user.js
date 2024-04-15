@@ -1,8 +1,9 @@
+//dependencies
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 const { Model, DataTypes } = require('sequelize'); 
 
-
+//table for users
 class User extends Model {};
 
 User.init({
