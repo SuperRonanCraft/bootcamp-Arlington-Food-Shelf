@@ -31,7 +31,7 @@ password: {
         len: [8],
     }
 },
-}
+},
 {
     hooks: {
         beforeCreate: async(newUserData) => {
