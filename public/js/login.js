@@ -1,10 +1,12 @@
 //Login Event
 const login = async (event) => {
   event.preventDefault();
+
   // Collect values from the login form
   const email = document.querySelector('#login-email').value.trim();
   const password = document.querySelector('#login-password').value.trim();
   // Send a POST request to the API endpoint
+
   if (email && password) {
     const response = await fetch('/api/login', {
       method: 'POST',
@@ -12,6 +14,7 @@ const login = async (event) => {
       body: JSON.stringify({ email, password }),
     });
     // If successful, redirect the browser to the homepage
+
     if (response.ok) {
       document.location.replace('/');
       // If not successful, alert the user
@@ -24,10 +27,12 @@ const login = async (event) => {
 //Signup Event
 const signup = async (event) => {
   event.preventDefault();
+
   // Collect values from the signup form
   const name = document.querySelector('#signup-name').value.trim();
   const email = document.querySelector('#signup-email').value.trim();
   const password = document.querySelector('#signup-password').value.trim();
+
   // Send a POST request to the API endpoint
   if (name && password && email) {
     const response = await fetch('/api/signup', {
@@ -36,6 +41,7 @@ const signup = async (event) => {
       body: JSON.stringify({ name, email, password }),
     });
     // If successful, redirect the browser to the homepage
+
     if (response.ok) {
       document.location.replace('/');
       // If not successful, alert the user
@@ -46,7 +52,8 @@ const signup = async (event) => {
 };
 
 //User Interaction
+
 // This is the event listener for the login form
-document.querySelector('#button-signup').addEventListener('submit', signup);
+document.querySelector('#signup').addEventListener('submit', signup);
 // This is the event listener for the signup form
-document.querySelector('#button-login').addEventListener('submit', login);
+document.querySelector('#login').addEventListener('submit', login);

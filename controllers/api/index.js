@@ -1,11 +1,21 @@
 const router = require('express').Router();
+const loginRoute = require('./loginRoute');
+const logoutRoute = require('./logoutRoute');
+const signupRoute = require('./signupRoute');
+const userRoutes = require('./userRoutes');
+const userRoute = require('./userRoute');
+const inventorRoute = require('./inventoryRoute');
 
 //User Routes
-router.use('/login', require('./loginRoute'));
-router.use('/logout', require('./logoutRoute'));
-router.use('/signup', require('./signupRoute'));
-router.use('/user', require('./userRoute'));
+// router.use('/login', loginRoute);
+// router.use('/logout', logoutRoute);
+// router.use('/signup', signupRoute);
+// router.use('/user', userRoute);
+// router.use('/inventory', inventorRoute);
 
-//Data Routes
+router.use('/users', userRoutes);
+
+router.use('/inventory', inventorRoute);
+router.use('/user', userRoute);
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models/index');
+const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -13,9 +13,8 @@ router.post('/', async (req, res) => {
       req.session.save(() => {
         req.session.loggedIn = true;
         req.session.userId = userData.id;
-        res
-          .status(200)
-          .json({ loggedIn: true, message: 'New account created!' });
+
+        res.status(200).json(userData);
       });
     } else {
       res.status(400).json({
