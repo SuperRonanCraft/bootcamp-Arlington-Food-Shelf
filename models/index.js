@@ -21,12 +21,12 @@ Order.hasMany(OrderItem, {
   foreignKey: 'order_id',
 });
 
-Inventory.hasMany(OrderItem, {
+Inventory.belongs(OrderItem, {
   foreignKey: 'inventory_id',
 });
 
 Inventory.belongsToMany(OrderItem, {
-  through: 'inventory_id',
+  through: 'inventory',
 });
 
 Inventory.hasOne(Category, {
@@ -37,4 +37,12 @@ Inventory.hasOne(Allergen, {
   foreignKey: 'allergen_id',
 });
 
-module.exports = { User };
+Category.belongsToMany(Inventory, {
+  through: 'inventory_id',
+});
+
+Allergen.belongsToMany(Inventory, {
+  through: 'allergen_id',
+});
+
+module.exports = { User, Order, Inventory, OrderItem };
