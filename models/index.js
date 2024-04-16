@@ -21,7 +21,7 @@ Order.hasMany(OrderItem, {
   foreignKey: 'order_id',
 });
 
-Inventory.belongs(OrderItem, {
+OrderItem.belongs(Inventory, {
   foreignKey: 'inventory_id',
 });
 
@@ -29,11 +29,11 @@ Inventory.belongsToMany(OrderItem, {
   through: 'inventory',
 });
 
-Inventory.hasOne(Category, {
+Inventory.belongsToMany(Category, {
   foreignKey: 'category_id',
 });
 
-Inventory.hasOne(Allergen, {
+Inventory.belongsToMany(Allergen, {
   foreignKey: 'allergen_id',
 });
 
