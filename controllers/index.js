@@ -1,15 +1,16 @@
 const router = require('express').Router();
 
-// const uiRoutes = require('./uiRoutes');
-
-// router.use('/', uiRoutes);
+//Api Routes
 router.use('/api', require('./api/index'));
-router.use('/login', require('./loginRoute'));
 
-router.get('/', (req, res) => {
-  res.render('homepage', {
-    loggedIn: req.session.loggedIn,
-  });
-});
+//Data Routes
+router.use('/', require('./homeRoute'));
+
+//User Routes
+router.use('/login', require('./loginRoute'));
+router.use('/order', require('./orderRoute'));
+router.use('/about', require('./aboutRoute'));
+router.use('/menu', require('./menuRoute'));
+router.use('/resources', require('./resourcesRoute'));
 
 module.exports = router;
