@@ -5,7 +5,7 @@ const { seedInv } = require('./inventoryData');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await seedInv();
+  // await seedInv();
   await seedUser();
 
   console.log('Seeded');

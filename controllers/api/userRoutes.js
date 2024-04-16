@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
 
       res.status(200).json(userData);
     });
@@ -19,8 +19,10 @@ router.post('/', async (req, res) => {
 
 // Login a user
 router.post('/login', async (req, res) => {
+  console.log('inside login route');
+  console.log(req.body);
   try {
-    const userData = await User.findOne({ where: { name: req.body.email } });
+    const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
       res
@@ -40,7 +42,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
 
       res.json({ user: userData, message: 'You are now logged in!' });
     });

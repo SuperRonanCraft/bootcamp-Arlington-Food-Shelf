@@ -1,4 +1,4 @@
-const { Inventory } = require('../models/index');
+const { Inventory } = require('../models');
 
 const data = [
   {

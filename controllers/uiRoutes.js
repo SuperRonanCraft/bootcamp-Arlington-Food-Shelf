@@ -19,23 +19,31 @@ router.get('/', (req, res) => {
 
 // About Route
 router.get('/about', (req, res) => {
-  res.render('about');
+  res.render('about', {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 // Order Route
 router.get('/order', auth, (req, res) => {
   const loggedIn = req.session.loggedIn;
-  res.render('ordering');
+  res.render('order', {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 // Resources Route
 router.get('/resources', (req, res) => {
-  res.render('resources');
+  res.render('resources', {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 // Stock Route
 router.get('/stock', (req, res) => {
-  res.render('menu');
+  res.render('menu', {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 // Login Route

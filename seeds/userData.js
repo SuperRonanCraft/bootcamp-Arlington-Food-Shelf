@@ -1,9 +1,9 @@
-const { User } = require('../models/index');
+const { User } = require('../models');
 
 const data = [
   {
     name: 'vitor',
-    email: 'vitor',
+    email: 'vitor@email.com',
     password: 'password',
   },
   {
