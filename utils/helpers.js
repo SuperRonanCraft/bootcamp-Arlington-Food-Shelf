@@ -1,3 +1,4 @@
+const { User, Category, Allergen } = require('../models/index');
 module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
@@ -19,4 +20,12 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  inventoryData: [
+    {
+      model: Category,
+    },
+    {
+      model: Allergen,
+    },
+  ],
 };
