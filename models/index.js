@@ -4,7 +4,10 @@ const Inventory = require('./inventory');
 const OrderItem = require('./orderItem');
 const Category = require('./category');
 const Allergen = require('./allergen');
+const AllergenInventory = require('./allergenInventory');
+const CategoryInventory = require('./categoryInventory');
 
+// USER and ORDER
 Order.belongsTo(User, {
   foreignKey: 'user_id',
 });
@@ -13,6 +16,7 @@ User.hasMany(Order, {
   foreignKey: 'user_id',
 });
 
+// ORDERITEM and ORDER
 OrderItem.belongsTo(Order, {
   foreignKey: 'order_id',
 });
@@ -21,28 +25,52 @@ Order.hasMany(OrderItem, {
   foreignKey: 'order_id',
 });
 
-Inventory.belongs(OrderItem, {
+// INVENTORY and ORDERITEM
+Inventory.belongsTo(OrderItem, {
   foreignKey: 'inventory_id',
 });
 
-Inventory.belongsToMany(OrderItem, {
-  through: 'inventory',
+OrderItem.hasOne(Inventory, {
+  foreignKey: 'inventory_id',
 });
 
-Inventory.hasOne(Category, {
-  foreignKey: 'category_id',
-});
-
-Inventory.hasOne(Allergen, {
-  foreignKey: 'allergen_id',
+// INVENTORY and CATEGORY
+Inventory.belongsToMany(Category, {
+  through: {
+    model: CategoryInventory,
+    unique: false,
+  },
 });
 
 Category.belongsToMany(Inventory, {
-  through: 'inventory_id',
+  through: {
+    model: CategoryInventory,
+    unique: false,
+  },
+});
+
+// INVENTORY and ALLERGEN
+Inventory.belongsToMany(Allergen, {
+  through: {
+    model: AllergenInventory,
+    unique: false,
+  },
 });
 
 Allergen.belongsToMany(Inventory, {
-  through: 'allergen_id',
+  through: {
+    model: AllergenInventory,
+    unique: false,
+  },
 });
 
-module.exports = { User, Order, Inventory, OrderItem };
+module.exports = {
+  User,
+  Order,
+  Inventory,
+  OrderItem,
+  Category,
+  Allergen,
+  AllergenInventory,
+  CategoryInventory,
+};
