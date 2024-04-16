@@ -11,10 +11,10 @@ Order.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    order_item_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'orderItem',
+        model: 'user',
         key: 'id',
       },
     },

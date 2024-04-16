@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Inventory extends Model {}
+class CategoryInventory extends Model {}
 
-Inventory.init(
+CategoryInventory.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,20 +11,10 @@ Inventory.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    stock: {
-      type: DataTypes.INTEGER,
-    },
-    description: {
-      type: DataTypes.STRING,
-    },
-    allergen_id: {
+    inventory_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'allergen',
+        model: 'inventory',
         key: 'id',
       },
     },
@@ -35,17 +25,14 @@ Inventory.init(
         key: 'id',
       },
     },
-    picture: {
-      type: DataTypes.TEXT,
-    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'inventory',
+    modelName: 'categoryInventory',
   },
 );
 
-module.exports = Inventory;
+module.exports = CategoryInventory;
