@@ -7,5 +7,7 @@ router.use('/signup', require('./signupRoute'));
 router.use('/user', require('./userRoute'));
 
 //Data Routes
+router.use('/inventory', require('./inventoryRoute'));
+router.use('/order', require('./orderRoute'));
 
 module.exports = router;
