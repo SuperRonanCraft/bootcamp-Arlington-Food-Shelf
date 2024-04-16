@@ -2,8 +2,8 @@
 function login(event) {
   event.preventDefault();
 
-  const username = document.querySelector('#username').value.trim();
-  const password = document.querySelector('#password').value.trim();
+  const username = document.querySelector('#login-email').value.trim();
+  const password = document.querySelector('#login-password').value.trim();
 
   if (username && password) {
     fetch('/api/login', {
@@ -28,8 +28,8 @@ function login(event) {
 function signup(event) {
   event.preventDefault();
 
-  const username = document.querySelector('#username').value.trim();
-  const password = document.querySelector('#password').value.trim();
+  const username = document.querySelector('#signup-username').value.trim();
+  const password = document.querySelector('#signup-password').value.trim();
 
   if (username && password) {
     fetch('/api/signup', {
