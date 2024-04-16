@@ -7,9 +7,7 @@ router.get('/', async (req, res) => {
       attributes: { exclude: ['password'] },
     });
     const users = userData.map((data) => data.get({ plain: true }));
-    res.status(200).json({
-      users,
-    });
+    res.status(200).json(users);
   } catch (err) {
     console.error(err);
   }
