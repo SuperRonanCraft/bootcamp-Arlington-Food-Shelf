@@ -1,53 +1,55 @@
-const loginFormHandler = async (event) => {
+//Login Event
+function login(event) {
   event.preventDefault();
 
-  // Collect values from the login form
-  const username = document.querySelector('#username-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const username = document.querySelector('#username').value.trim();
+  const password = document.querySelector('#password').value.trim();
 
   if (username && password) {
-    // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
+    fetch('/api/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      // If successful, redirect the browser to the homepage
-      document.location.replace('/');
-    } else {
-      alert(response.statusText);
-    }
+      body: JSON.stringify({ username, password }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        if (data.loggedIn) {
+          document.location.replace('/');
+        } else {
+          alert('Failed to login!');
+        }
+      });
   }
-};
+}
 
-const signupFormHandler = async (event) => {
+//Signup Event
+function signup(event) {
   event.preventDefault();
 
-  const name = document.querySelector('#username-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const username = document.querySelector('#username').value.trim();
+  const password = document.querySelector('#password').value.trim();
 
-  if (name && password) {
-    const response = await fetch('/api/users', {
+  if (username && password) {
+    fetch('/api/signup', {
       method: 'POST',
-      body: JSON.stringify({ name, password }),
       headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      // If successful, redirect the browser to the homepage
-      document.location.replace('/');
-    } else {
-      alert(response.statusText);
-    }
+      body: JSON.stringify({ username, password }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        if (data.loggedIn) {
+          document.location.replace('/');
+        } else {
+          alert('Error occured creating account!');
+        }
+      });
   }
-};
+}
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
-
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+//User Interaction
+document.querySelector('#button-signup').addEventListener('submit', signup);
+document.querySelector('#button-login').addEventListener('submit', login);
