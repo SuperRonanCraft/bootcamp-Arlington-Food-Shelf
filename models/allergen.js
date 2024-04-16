@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Catagoty = require('./catagory');
 
 class Allergen extends Model {}
 
