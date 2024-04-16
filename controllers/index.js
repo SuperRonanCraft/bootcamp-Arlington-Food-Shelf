@@ -10,7 +10,7 @@ router.use('/', require('./homeRoute'));
 router.use('/login', require('./loginRoute'));
 router.use('/order', require('./orderRoute'));
 router.use('/about', require('./aboutRoute'));
-router.use('/menu', require('./menuRoute'));
+router.use('/stock', require('./stockRoute'));
 router.use('/resources', require('./resourcesRoute'));
 
 module.exports = router;
