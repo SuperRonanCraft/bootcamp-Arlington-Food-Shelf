@@ -34,3 +34,5 @@ Allergens.init(
     modelName: 'allergens',
   },
 );
+
+module.exports = Allergens;

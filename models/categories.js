@@ -34,3 +34,5 @@ Categories.init(
     modelName: 'categories',
   },
 );
+
+module.exports = Categories;
