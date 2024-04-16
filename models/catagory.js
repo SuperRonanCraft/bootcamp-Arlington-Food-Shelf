@@ -21,6 +21,8 @@ Catagoty.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'inventory',
+    modelName: 'catagory',
   },
 );
+
+module.exports = Catagoty;
