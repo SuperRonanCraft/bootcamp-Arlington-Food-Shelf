@@ -18,8 +18,12 @@ Inventory.init(
     description: {
       type: DataTypes.STRING,
     },
-    allergen: {
-      type: DataTypes.STRING,
+    allergen_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'allergen',
+        key: 'id',
+      },
     },
     catagory_id: {
       type: DataTypes.INTEGER,
