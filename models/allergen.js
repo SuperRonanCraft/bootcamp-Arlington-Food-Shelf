@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Catagoty = require('./catagory');
 
 class Allergen extends Model {}
 
@@ -24,3 +25,5 @@ Allergen.init(
     modelName: 'allergen',
   },
 );
+
+module.exports = Allergen;
