@@ -24,7 +24,7 @@ const data = [
   {
     name: 'alain',
     email: 'alain@email.com',
-    password: 'password',
+    password: 'password'  ,
   },
 ];
 
