@@ -2,14 +2,14 @@
 function login(event) {
   event.preventDefault();
 
-  const username = document.querySelector('#login-email').value.trim();
+  const email = document.querySelector('#login-email').value.trim();
   const password = document.querySelector('#login-password').value.trim();
 
-  if (username && password) {
+  if (email && password) {
     fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
     })
       .then((response) => {
         return response.json();
@@ -28,14 +28,16 @@ function login(event) {
 function signup(event) {
   event.preventDefault();
 
-  const username = document.querySelector('#signup-username').value.trim();
+  const name = document.querySelector('#signup-name').value.trim();
+  const email = document.querySelector('#signup-email').value.trim();
   const password = document.querySelector('#signup-password').value.trim();
 
-  if (username && password) {
+  if (name && password && email) {
+    console.log('test');
     fetch('/api/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ name, email, password }),
     })
       .then((response) => {
         return response.json();
