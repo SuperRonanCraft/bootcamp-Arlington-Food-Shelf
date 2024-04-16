@@ -15,6 +15,9 @@ Inventory.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    stock: {
+      type: DataTypes.INTEGER,
+    },
     description: {
       type: DataTypes.STRING,
     },
