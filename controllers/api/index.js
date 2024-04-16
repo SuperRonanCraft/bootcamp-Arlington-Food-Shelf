@@ -4,4 +4,6 @@ const router = require('express').Router();
 router.use('/login', require('./loginRoute'));
 router.use('/logout', require('./logoutRoute'));
 
+//Data Routes
+
 module.exports = router;

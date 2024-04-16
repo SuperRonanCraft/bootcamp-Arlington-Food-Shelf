@@ -1,9 +1,9 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   const loggedIn = req.session.loggedIn;
-  if (loggedIn) res.redirect('/');
-  else res.render('login');
+  res.render('ordering');
 });
 
 module.exports = router;
