@@ -17,23 +17,11 @@ Inventory.init(
     },
     stock: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 1,
     },
     description: {
       type: DataTypes.STRING,
-    },
-    allergen_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'allergen',
-        key: 'id',
-      },
-    },
-    catagory_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'category',
-        key: 'id',
-      },
     },
     picture: {
       type: DataTypes.TEXT,

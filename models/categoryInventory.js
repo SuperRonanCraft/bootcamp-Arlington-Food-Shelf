@@ -18,7 +18,7 @@ CategoryInventory.init(
         key: 'id',
       },
     },
-    catagory_id: {
+    category_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'category',
