@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const { seedUser } = require('./userData');
 const { seedInv } = require('./inventoryData');
 const { seedCategory } = require('./categoryData');
-const { seedAllergen } = require('./allerginData');
+const { seedAllergen } = require('./allergenData');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
