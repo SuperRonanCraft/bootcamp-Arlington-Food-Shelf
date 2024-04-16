@@ -4,7 +4,7 @@ const logoutRoute = require('./logoutRoute');
 const signupRoute = require('./signupRoute');
 const userRoutes = require('./userRoutes');
 const userRoute = require('./userRoute');
-const inventorRoute = require('./inventoryRoute');
+const inventoyRoute = require('./inventoryRoute');
 
 //User Routes
 // router.use('/login', loginRoute);
@@ -15,7 +15,7 @@ const inventorRoute = require('./inventoryRoute');
 
 router.use('/users', userRoutes);
 
-router.use('/inventory', inventorRoute);
+router.use('/inventory', inventoryRoute);
 router.use('/user', userRoute);
 
 module.exports = router;
