@@ -21,7 +21,7 @@ Order.hasMany(OrderItem, {
   foreignKey: 'order_id',
 });
 
-Inventory.belongs(OrderItem, {
+Inventory.belongsTo(OrderItem, {
   foreignKey: 'inventory_id',
 });
 
