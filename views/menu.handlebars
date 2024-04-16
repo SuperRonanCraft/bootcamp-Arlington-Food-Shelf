@@ -26,3 +26,12 @@
   </button>
 </div>
 
+{{#each stock as |item|}}
+  <div class='col-sm-12 col-md-6 my-2'>
+    {{picture}}
+    {{name}}
+    {{description}}
+    {{allergen_id}}
+    {{catagory_id}}
+  </div>
+{{/each}}
