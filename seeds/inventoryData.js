@@ -20,6 +20,8 @@ const data = [
 ];
 
 function seedInv() {
+  console.log('Seeding Inventory');
+  console.log(data);
   return Inventory.bulkCreate(data, {
     individualHooks: true,
   });

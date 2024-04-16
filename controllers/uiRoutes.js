@@ -18,28 +18,28 @@ router.get('/', (req, res) => {
 });
 
 // About Route
-router.get('/', (req, res) => {
+router.get('/about', (req, res) => {
   res.render('about');
 });
 
 // Order Route
-router.get('/', withAuth, (req, res) => {
+router.get('/order', auth, (req, res) => {
   const loggedIn = req.session.loggedIn;
   res.render('ordering');
 });
 
 // Resources Route
-router.get('/', (req, res) => {
+router.get('/resources', (req, res) => {
   res.render('resources');
 });
 
 // Stock Route
-router.get('/', (req, res) => {
+router.get('/stock', (req, res) => {
   res.render('menu');
 });
 
 // Login Route
-router.get('/', (req, res) => {
+router.get('/login', (req, res) => {
   const loggedIn = req.session.loggedIn;
   if (loggedIn) res.redirect('/');
   else res.render('login');

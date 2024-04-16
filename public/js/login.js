@@ -8,7 +8,7 @@ const login = async (event) => {
   // Send a POST request to the API endpoint
 
   if (email && password) {
-    const response = await fetch('/api/login', {
+    const response = await fetch('/api/users/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
@@ -19,7 +19,9 @@ const login = async (event) => {
       document.location.replace('/');
       // If not successful, alert the user
     } else {
-      alert('Failed to login!');
+      console.log(response);
+      console.log(email, password);
+      alert('Faileh to login!');
     }
   }
 };
