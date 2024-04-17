@@ -19,11 +19,11 @@ User.hasMany(Order, {
 // ORDERITEM and ORDER
 OrderItem.belongsTo(Order, {
   foreignKey: 'order_id',
-  onDelete: 'CASCADE',
 });
 
 Order.hasMany(OrderItem, {
   foreignKey: 'order_id',
+  onDelete: 'CASCADE',
 });
 
 // INVENTORY and ORDERITEM
