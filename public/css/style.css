@@ -9,3 +9,20 @@ form [type='checkbox'] {
 .btn.active {
   background-color: rgb(0, 55, 255) !important;
 }
+
+.about-carousel {
+  max-width: 60%;
+  min-width: 300px; /* Adjust this value to your desired minimum width */
+  margin: 0 auto;
+}
+
+.bio-card {
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the card horizontally */
+}
+
+#map {
+  height: 400px; /* Adjust the height as needed */
+  width: 50%;
+  margin: auto;
+}
