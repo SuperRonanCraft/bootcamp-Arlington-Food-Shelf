@@ -7,10 +7,12 @@ const { seedAllergen } = require('./allergenData');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await seedUser();
   await seedInv();
+
   await seedCategory();
   await seedAllergen();
+  await seedUser();
+
 
   console.log('Seeded');
 

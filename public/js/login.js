@@ -1,57 +1,61 @@
 //Login Event
-function login(event) {
+const login = async (event) => {
   event.preventDefault();
 
+  // Collect values from the login form
   const email = document.querySelector('#login-email').value.trim();
   const password = document.querySelector('#login-password').value.trim();
+  // Send a POST request to the API endpoint
 
   if (email && password) {
-    fetch('/api/login', {
+    const response = await fetch('/api/users/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        if (data.loggedIn) {
-          document.location.replace('/');
-        } else {
-          alert('Failed to login!');
-        }
-      });
+    });
+    // If successful, redirect the browser to the homepage
+
+    if (response.ok) {
+      document.location.replace('/');
+      // If not successful, alert the user
+    } else {
+      console.log(response);
+      console.log(email, password);
+      alert('Faileh to login!');
+    }
   }
-}
+};
 
 //Signup Event
-function signup(event) {
+const signup = async (event) => {
   event.preventDefault();
 
+  // Collect values from the signup form
   const name = document.querySelector('#signup-name').value.trim();
   const email = document.querySelector('#signup-email').value.trim();
   const password = document.querySelector('#signup-password').value.trim();
 
+  // Send a POST request to the API endpoint
   if (name && password && email) {
-    console.log('test');
-    fetch('/api/signup', {
+    const response = await fetch('/api/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        if (data.loggedIn) {
-          document.location.replace('/');
-        } else {
-          alert('Error occured creating account!');
-        }
-      });
+    });
+    // If successful, redirect the browser to the homepage
+
+    if (response.ok) {
+      document.location.replace('/');
+      // If not successful, alert the user
+    } else {
+      alert('Error occured creating account!');
+    }
   }
-}
+};
 
 //User Interaction
-document.querySelector('#button-signup').addEventListener('submit', signup);
-document.querySelector('#button-login').addEventListener('submit', login);
+
+// This is the event listener for the login form
+document.querySelector('#signup').addEventListener('submit', signup);
+// This is the event listener for the signup form
+document.querySelector('#login').addEventListener('submit', login);
