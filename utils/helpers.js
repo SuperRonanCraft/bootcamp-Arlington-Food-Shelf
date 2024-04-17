@@ -38,9 +38,6 @@ module.exports = {
     { model: User, attributes: { exclude: ['password'] } },
     {
       model: OrderItem,
-      attributes: {
-        exclude: ['order_id'],
-      },
       include: [{ model: Inventory }],
     },
   ],

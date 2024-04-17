@@ -13,16 +13,50 @@ router.get('/', (req, res) => {
   });
 });
 
+//Delete an order
 router.delete('/:id', async (req, res) => {
   try {
-    const deleted = await Order.destroy({ where: { id: req.params.id } });
-    res.status(200).json({ deleted: deleted >= 1 ? true : false });
+    try {
+      //Start of SQL transaction (if an error happens, it will rollback automatically)
+      let error = false;
+      const deletedOrder = await sequelize.transaction(async (t) => {
+        const order = await Order.findByPk(req.params.id);
+
+        if (!order) {
+          res
+            .status(404)
+            .json({ deleted: false, message: 'Invalid order id!' });
+          error = true;
+          return;
+        }
+
+        await OrderItem.destroy(
+          {
+            where: {
+              order_id: req.params.id,
+            },
+          },
+          { transaction: t },
+        );
+
+        await order.destroy();
+        return order;
+      });
+      //Transaction closed with no errors
+
+      if (!error) res.status(201).json({ deleted: true, deletedOrder });
+    } catch (err) {
+      // The transaction has been rolled back automatically by Sequelize after error!
+      console.log(err);
+      res.status(500).send(err);
+    }
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
   }
 });
 
+//Create a new Order
 router.post('/', async (req, res) => {
   if (!req.session.user_id) {
     res.status(404).json({

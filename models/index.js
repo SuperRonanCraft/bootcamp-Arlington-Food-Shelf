@@ -23,6 +23,7 @@ OrderItem.belongsTo(Order, {
 
 Order.hasMany(OrderItem, {
   foreignKey: 'order_id',
+  onDelete: 'CASCADE',
 });
 
 // INVENTORY and ORDERITEM
