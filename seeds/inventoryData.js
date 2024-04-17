@@ -3,11 +3,13 @@ const { Inventory } = require('../models/index');
 const data = [
   {
     name: 'Bean',
+    description: 'Canned beans',
     picture: 'beans.jpg',
   },
   {
     name: 'Potato',
-    picture: 'potatoes.jpg',
+    description: 'Freah Idaho Potato',
+    picture: 'potato.jpg',
   },
   {
     name: 'Lemon',
@@ -15,7 +17,6 @@ const data = [
   },
   {
     name: 'Pizza',
-    name: 'Cheese',
     stock: '13',
     description: '1lb block of chedder cheese.',
     picture: 'pizza.webp',
