@@ -1,0 +1,57 @@
+
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/images/dairy-products.jpg" class="d-block w-100" alt="dairy products" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/produce.jpg" class="d-block w-100" alt="produce" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/snacks.jpg" class="d-block w-100" alt="snacks" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/frozenfoods.png" class="d-block w-100" alt="frozen foods" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/meats.jpg" class="d-block w-100" alt="meats" height="500px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="row mt-5">
+{{#each stock as |item|}}
+  <div class='col-sm-6 col-md-4 col-lg-2'>
+    <img src="/images/{{picture}}" class="w-30" alt="food pictures" height="100px">
+    <div class="ml-3">{{name}}</div> 
+    {{description}}
+    {{allergens}}
+    {{categories}}  
+   <button type="button" class="btn btn-info">+Add</button>  
+  </div>
+{{/each}}
+</div>
+
+<div class="d-flex justify-content-end fixed-bottom" >
+    <a href="#cart"><img src="../public/images/trolley.png" height="50px" alt="shopping cart"></a>
+</div>
+
+<div id="cart">
+    <h3 class="d-flex justify-content-center">Item</h3>
+    <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-danger">Remove</button>
+    </div>
+    <h3 class="d-flex justify-content-center">Total</h3>
+    <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-info">Purchase</button>
+    </div>
+</div>
