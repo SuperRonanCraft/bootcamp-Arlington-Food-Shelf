@@ -46,8 +46,10 @@ router.get('/orders', auth, (req, res) => {
 
 // Resources Route
 router.get('/resources', (req, res) => {
+  const { schedule } = require('../assets/schedule.js');
   res.render('resources', {
     loggedIn: req.session.loggedIn,
+    schedule,
   });
 });
 
