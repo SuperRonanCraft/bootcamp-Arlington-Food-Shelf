@@ -1,6 +1,4 @@
 const { Inventory } = require('../models/index');
-const { describe } = require('../models/user');
-
 
 const data = [
   {
