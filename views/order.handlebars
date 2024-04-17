@@ -10,12 +10,22 @@
             <h3 class='card-title text-center'>{{name}}</h3>
             <div class='card-body'>
               <p class='text-center'>{{description}}</p>
-              <p class='text-start fs-6'>Available: {{stock}}</p>
+              <p class='text-center fs-6'>Available: {{stock}}</p>
               <div class='text-center'>
                 <label class='btn btn-secondary'>
-                  <input type='checkbox' />
+                  <input type='checkbox' name='selected' />
                   Select
                 </label>
+              </div>
+              <div class='d-flex'>
+                <label class='w-50'>Quantity</label>
+                <input
+                  type='number'
+                  name='quantity'
+                  min='1'
+                  value='1'
+                  class='w-50'
+                />
               </div>
             </div>
           </div>
