@@ -35,6 +35,7 @@ router.post('/', async (req, res) => {
   const { order_data } = req.body;
 
   try {
+    //Start of SQL transaction (if an error happens, it will rollback automatically)
     const order_id = await sequelize.transaction(async (t) => {
       const order = await Order.create(
         {
@@ -61,6 +62,7 @@ router.post('/', async (req, res) => {
     });
     //Transaction closed with no errors
 
+    //Grabbing new order with user and orderItems data
     const orderCompleted = await Order.findOne({
       where: {
         id: order_id,
@@ -70,7 +72,7 @@ router.post('/', async (req, res) => {
 
     res.status(201).json(orderCompleted);
   } catch (err) {
-    // The transaction has been rolled back automatically by Sequelize!
+    // The transaction has been rolled back automatically by Sequelize after error!
     console.log(err);
     res.status(500).send(err);
   }
