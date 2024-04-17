@@ -15,7 +15,6 @@ const data = [
   },
   {
     name: 'Pizza',
-    name: 'Cheese',
     stock: '13',
     description: '1lb block of chedder cheese.',
     picture: 'pizza.webp',
