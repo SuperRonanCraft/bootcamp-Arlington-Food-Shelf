@@ -1,4 +1,4 @@
-const { User, Category, Allergen } = require('../models/index');
+const { User, Category, Allergen, OrderItem } = require('../models/index');
 module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
@@ -27,5 +27,9 @@ module.exports = {
     {
       model: Allergen,
     },
+  ],
+  orderData: [
+    { model: User, attributes: { exclude: ['password'] } },
+    { model: OrderItem, attributes: { exclude: ['order_id'] } },
   ],
 };

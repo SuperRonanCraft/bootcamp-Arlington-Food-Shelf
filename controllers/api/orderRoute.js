@@ -1,13 +1,26 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Order, OrderItem } = require('../../models/index');
+const { Order, OrderItem, User } = require('../../models/index');
+const { orderData } = require('../../utils/helpers');
 
 router.get('/', (req, res) => {
-  Order.findAll().then((data) => {
+  Order.findAll({
+    include: orderData,
+  }).then((data) => {
     const orders = data.map((obj) => obj.get({ plain: true }));
     console.log(orders);
     res.json(orders);
   });
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const deleted = await Order.destroy({ where: { id: req.params.id } });
+    res.status(200).json({ deleted: deleted >= 1 ? true : false });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
 });
 
 router.post('/', async (req, res) => {
@@ -22,7 +35,7 @@ router.post('/', async (req, res) => {
   const { order_data } = req.body;
 
   try {
-    const result = await sequelize.transaction(async (t) => {
+    const order_id = await sequelize.transaction(async (t) => {
       const order = await Order.create(
         {
           user_id: req.session.user_id,
@@ -41,13 +54,21 @@ router.post('/', async (req, res) => {
         };
         orderArray.push(itemObj);
       }
-
-      const orderItems = await OrderItem.bulkCreate(order_data, {
+      await OrderItem.bulkCreate(orderArray, {
         transaction: t,
       });
-
-      res.status(201).json(orderItems);
+      return order.id;
     });
+    //Transaction closed with no errors
+
+    const orderCompleted = await Order.findOne({
+      where: {
+        id: order_id,
+      },
+      include: orderData,
+    });
+
+    res.status(201).json(orderCompleted);
   } catch (err) {
     // The transaction has been rolled back automatically by Sequelize!
     console.log(err);
