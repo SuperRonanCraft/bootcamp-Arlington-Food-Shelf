@@ -1,3 +1,10 @@
+:root {
+  --primary: #342628;
+  --secondary: #788402;
+  --tertiary: #feaa00;
+  --quaternary: #f7f4ef;
+}
+
 .nav-link[aria-current='page'] {
   text-decoration: underline;
 }
