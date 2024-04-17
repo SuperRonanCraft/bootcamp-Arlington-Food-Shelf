@@ -1,13 +1,13 @@
 const router = require('express').Router();
+const userRoutes = require('./userRoutes');
+const inventoryRoute = require('./inventoryRoute');
+const orderRoute = require('./orderRoute');
 
 //User Routes
-router.use('/login', require('./loginRoute'));
-router.use('/logout', require('./logoutRoute'));
-router.use('/signup', require('./signupRoute'));
-router.use('/user', require('./userRoute'));
+router.use('/users', userRoutes);
 
 //Data Routes
-router.use('/inventory', require('./inventoryRoute'));
-router.use('/order', require('./orderRoute'));
+router.use('/inventory', inventoryRoute);
+router.use('/order', orderRoute);
 
 module.exports = router;

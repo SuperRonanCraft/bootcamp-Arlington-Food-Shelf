@@ -1,4 +1,4 @@
-const { User } = require('../models/index');
+const { User } = require('../models');
 
 const data = [
   {
@@ -24,11 +24,13 @@ const data = [
   {
     name: 'alain',
     email: 'alain@email.com',
-    password: 'password'  ,
+    password: 'password',
   },
 ];
 
 function seedUser() {
+  console.log('Seeding User');
+  console.log(data);
   return User.bulkCreate(data, {
     individualHooks: true,
   });

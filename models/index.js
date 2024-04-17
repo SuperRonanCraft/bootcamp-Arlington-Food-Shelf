@@ -1,11 +1,11 @@
-const User = require('./user');
-const Order = require('./order');
-const Inventory = require('./inventory');
-const OrderItem = require('./orderItem');
-const Category = require('./category');
-const Allergen = require('./allergen');
-const AllergenInventory = require('./allergenInventory');
-const CategoryInventory = require('./categoryInventory');
+const User = require('./User');
+const Order = require('./Order');
+const Inventory = require('./Inventory');
+const OrderItem = require('./OrderItem');
+const Category = require('./Category');
+const Allergen = require('./Allergen');
+const AllergenInventory = require('./AllergenInventory');
+const CategoryInventory = require('./CategoryInventory');
 
 // USER and ORDER
 Order.belongsTo(User, {

@@ -28,11 +28,11 @@
   </button>
 </div>
 
-<div class="row mt-5 d-flex justify-content-around">
+<div class="row mt-5">
 {{#each stock as |item|}}
   <div class='col-sm-6 col-md-4 col-lg-2'>
-   <div class="ml-3">{{name}}</div> 
     <img src="/images/{{picture}}" class="w-30" alt="food pictures" height="100px">
+    <div class="ml-3">{{name}}</div> 
     {{description}}
     {{allergens}}
     {{categories}}  
@@ -41,3 +41,17 @@
 {{/each}}
 </div>
 
+<div class="d-flex justify-content-end fixed-bottom" >
+    <a href="#cart"><img src="../public/images/trolley.png" height="50px" alt="shopping cart"></a>
+</div>
+
+<div id="cart">
+    <h3 class="d-flex justify-content-center">Item</h3>
+    <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-danger">Remove</button>
+    </div>
+    <h3 class="d-flex justify-content-center">Total</h3>
+    <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-primary">Purchase</button>
+    </div>
+</div>
