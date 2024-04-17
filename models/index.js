@@ -26,11 +26,11 @@ Order.hasMany(OrderItem, {
 });
 
 // INVENTORY and ORDERITEM
-Inventory.belongsTo(OrderItem, {
+OrderItem.belongsTo(Inventory, {
   foreignKey: 'inventory_id',
 });
 
-OrderItem.hasOne(Inventory, {
+Inventory.hasOne(OrderItem, {
   foreignKey: 'inventory_id',
 });
 

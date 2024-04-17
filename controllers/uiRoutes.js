@@ -32,13 +32,11 @@ router.get('/order', auth, (req, res) => {
 });
 
 router.get('/orders', auth, (req, res) => {
-  Order.findAll(
-    { where: { user_id: req.session.user_id } },
-    { include: orderData },
-  )
+  Order.findAll({ where: { user_id: req.session.user_id }, include: orderData })
     .then((data) => {
       const orders = data.map((obj) => obj.get({ plain: true }));
       res.render('orders', { orders });
+      console.log(orders);
     })
     .catch((err) => {
       console.log(err);
