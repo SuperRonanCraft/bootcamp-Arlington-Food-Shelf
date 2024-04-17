@@ -56,6 +56,7 @@ router.get('/stock', (req, res) => {
   Inventory.findAll({ include: inventoryData })
     .then((data) => {
       const stock = data.map((obj) => obj.get({ plain: true }));
+      console.log(req.session.loggedIn);
       res.render('menu', { stock, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
