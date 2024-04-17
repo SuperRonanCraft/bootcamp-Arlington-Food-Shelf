@@ -3,19 +3,19 @@ const { Inventory } = require('../models/index');
 const data = [
   {
     name: 'Beans',
-    picture: 'dairy-products.jpg',
+    picture: 'beans.jpg',
   },
   {
     name: 'Potatoes',
-    picture: 'frozenfoods.png',
+    picture: 'potatoes.jpg',
   },
   {
     name: 'Lemon',
-    picture: 'meats.jpg',
+    picture: 'lemon.jpg',
   },
   {
     name: 'Pizza',
-    picture: 'produce.jpg',
+    picture: 'pizza.webp',
   },
 ];
 

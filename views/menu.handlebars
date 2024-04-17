@@ -28,14 +28,16 @@
   </button>
 </div>
 
-
+<div class="row mt-5 d-flex justify-content-around">
 {{#each stock as |item|}}
-  <div class='col-sm-6 col-md-4 col-lg-2 row'>
-    {{name}}
-    <img src="/images/{{picture}}" class="w-20" alt="meats" height="100px">
+  <div class='col-sm-6 col-md-4 col-lg-2'>
+   <div class="ml-3">{{name}}</div> 
+    <img src="/images/{{picture}}" class="w-30" alt="food pictures" height="100px">
     {{description}}
     {{allergens}}
     {{categories}}  
-<button type="button" class="btn btn-info">+Add</button>  
-</div>
+   <button type="button" class="btn btn-info">+Add</button>  
+  </div>
 {{/each}}
+</div>
+
