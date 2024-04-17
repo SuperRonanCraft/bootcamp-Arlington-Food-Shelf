@@ -7,7 +7,7 @@ const data = [
   },
   {
     name: 'Potato',
-    picture: 'potatoes.jpg',
+    picture: 'potato.jpg',
   },
   {
     name: 'Lemon',
