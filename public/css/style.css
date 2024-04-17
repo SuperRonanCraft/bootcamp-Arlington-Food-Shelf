@@ -1,5 +1,17 @@
+:root {
+  --primary: #334952;
+  --secondary: #6586af;
+  --tertiary: #dae4e2;
+  --quaternary: #f6f1f4;
+}
+
 .nav-link[aria-current='page'] {
   text-decoration: underline;
+  color: var(--secondary);
+}
+
+.nav-link {
+  color: var(--quaternary);
 }
 
 form [type='checkbox'] {
@@ -25,4 +37,26 @@ form [type='checkbox'] {
   height: 400px; /* Adjust the height as needed */
   width: 50%;
   margin: auto;
+}
+
+header {
+  background-color: var(--primary);
+}
+
+body {
+  background-color: var(--tertiary);
+}
+
+.navbar {
+  color: var(--quaternary);
+}
+
+.navbar-brand {
+  color: var(--quaternary);
+}
+
+.card {
+  background: var(--secondary);
+  color: var(--quaternary);
+  border: var(--primary);
 }
