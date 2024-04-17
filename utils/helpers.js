@@ -1,4 +1,10 @@
-const { User, Category, Allergen } = require('../models/index');
+const {
+  User,
+  Category,
+  Allergen,
+  OrderItem,
+  Inventory,
+} = require('../models/index');
 module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
@@ -28,4 +34,23 @@ module.exports = {
       model: Allergen,
     },
   ],
+  orderData: [
+    { model: User, attributes: { exclude: ['password'] } },
+    {
+      model: OrderItem,
+      attributes: {
+        exclude: ['order_id'],
+      },
+      include: [{ model: Inventory }],
+    },
+  ],
+  orderMap: (obj) => {
+    const newobj = obj.get({ plain: true });
+    let count = 0;
+    for (const orderItem of newobj.orderItems) {
+      count += orderItem.stock;
+    }
+    newobj.total_items = count;
+    return newobj;
+  },
 };

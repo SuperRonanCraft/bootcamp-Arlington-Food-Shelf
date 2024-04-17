@@ -1,0 +1,30 @@
+<div class='container'>
+  <div class='text-end my-2'>
+    <a href='/order' class='btn btn-primary'>Start New Order</a>
+  </div>
+  {{#if orders}}
+    <div class='row'>
+      {{#each orders as |order|}}
+        <div class='container col-12 bg-info mb-2 card'>
+          <div class='row'>
+
+            <h2 class='col-6 card-title'>Order #{{id}}</h2>
+            <p class='col-6 text-end'>
+              x{{total_items}}</p>
+          </div>
+          <div class='card-body'>
+            {{#each orderItems as |item|}}
+              <span class='fs-3'>{{inventory.name}}</span>
+              <span class='fs-5'>x{{stock}},</span>
+            {{/each}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <div class='text-center'>
+      <h2 class='alert alert-danger'>No Open Orders</h2>
+    </div>
+  {{/if}}
+
+</div>
