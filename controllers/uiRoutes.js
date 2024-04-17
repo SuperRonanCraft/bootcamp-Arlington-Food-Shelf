@@ -1,8 +1,8 @@
 // Purpose: To render the homepage and login page
 const router = require('express').Router();
-const { Inventory } = require('../models');
+const { Inventory, Order } = require('../models');
 const auth = require('../utils/auth');
-const { inventoryData } = require('../utils/helpers');
+const { inventoryData, orderData } = require('../utils/helpers');
 
 // Homepage Route
 router.get('/', (req, res) => {
@@ -20,10 +20,30 @@ router.get('/about', (req, res) => {
 
 // Order Route
 router.get('/order', auth, (req, res) => {
-  const loggedIn = req.session.loggedIn;
-  res.render('order', {
-    loggedIn: req.session.loggedIn,
-  });
+  Inventory.findAll({ include: inventoryData })
+    .then((data) => {
+      const stock = data.map((obj) => obj.get({ plain: true }));
+      res.render('order', { stock });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send(err);
+    });
+});
+
+router.get('/orders', auth, (req, res) => {
+  Order.findAll(
+    { where: { user_id: req.session.user_id } },
+    { include: orderData },
+  )
+    .then((data) => {
+      const orders = data.map((obj) => obj.get({ plain: true }));
+      res.render('orders', { orders });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send(err);
+    });
 });
 
 // Resources Route
