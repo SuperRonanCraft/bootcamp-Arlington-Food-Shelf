@@ -4,14 +4,26 @@ const { User } = require('../../models');
 // Create a new user
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const { name, email, password } = req.body;
+    if (name && email && password) {
+      const userData = await User.create({
+        name,
+        email,
+        password,
+      });
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.loggedIn = true;
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.loggedIn = true;
 
-      res.status(200).json(userData);
-    });
+        res.status(200).json(userData);
+      });
+    } else {
+      res.status(400).json({
+        loggedIn: false,
+        message: 'Didnt provide name, email or password!',
+      });
+    }
   } catch (err) {
     res.status(400).json(err);
   }
