@@ -1,8 +1,105 @@
-{{#each posts}}
-  <article>
-    <div class='post'>
-      <h2><a href='/posts/{{this.id}}'>{{this.title}}</a></h2>
-      <p>Posted on: {{format_date this.date_created}}</p>
+<!-- homepage.handlebars -->
+<div class='container'>
+  <h1 class='text-center my-4'>Welcome to Arlington Food Shelf</h1>
+
+  <div
+    id='carouselExampleIndicators'
+    class='carousel slide'
+    data-bs-ride='carousel'
+  >
+    <div class='carousel-indicators'>
+      <button
+        type='button'
+        data-bs-target='#carouselExampleIndicators'
+        data-bs-slide-to='0'
+        class='active'
+        aria-current='true'
+        aria-label='Slide 1'
+      ></button>
+      <button
+        type='button'
+        data-bs-target='#carouselExampleIndicators'
+        data-bs-slide-to='1'
+        aria-label='Slide 2'
+      ></button>
+      <button
+        type='button'
+        data-bs-target='#carouselExampleIndicators'
+        data-bs-slide-to='2'
+        aria-label='Slide 3'
+      ></button>
+      <button
+        type='button'
+        data-bs-target='#carouselExampleIndicators'
+        data-bs-slide-to='3'
+        aria-label='Slide 4'
+      ></button>
     </div>
-  </article>
-{{/each}}
+    <div class='carousel-inner'>
+      <div class='carousel-item active'>
+        <img
+          src='https://via.placeholder.com/800x400?text=Item+1'
+          class='d-block w-100'
+          alt='Item 1'
+        />
+      </div>
+      <div class='carousel-item'>
+        <img
+          src='https://via.placeholder.com/800x400?text=Item+2'
+          class='d-block w-100'
+          alt='Item 2'
+        />
+      </div>
+      <div class='carousel-item'>
+        <img
+          src='https://via.placeholder.com/800x400?text=Item+3'
+          class='d-block w-100'
+          alt='Item 3'
+        />
+      </div>
+      <div class='carousel-item'>
+        <img
+          src='https://via.placeholder.com/800x400?text=Item+4'
+          class='d-block w-100'
+          alt='Item 4'
+        />
+      </div>
+    </div>
+    <button
+      class='carousel-control-prev'
+      type='button'
+      data-bs-target='#carouselExampleIndicators'
+      data-bs-slide='prev'
+    >
+      <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+      <span class='visually-hidden'>Previous</span>
+    </button>
+    <button
+      class='carousel-control-next'
+      type='button'
+      data-bs-target='#carouselExampleIndicators'
+      data-bs-slide='next'
+    >
+      <span class='carousel-control-next-icon' aria-hidden='true'></span>
+      <span class='visually-hidden'>Next</span>
+    </button>
+  </div>
+
+  <p class='text-center my-4'>These are the highlighted items of the week</p>
+
+  <div class='card mb-4'>
+    <div class='card-body'>
+      <h5 class='card-title'><u>Location and Hours</u></h5>
+      <p class='card-text'>
+        <strong>Address:</strong><br />
+        165 Old Mill Road<br />
+        E. Arlington, VT 05252<br />
+        <br />
+        <strong>Hours:</strong><br />
+        First Tuesday, 1:30pm - 4:00pm<br />
+        Third Tuesday: 3:30pm - 5:30pm<br />
+        In case of unexpected need please call the Town Clerk or 211
+      </p>
+    </div>
+  </div>
+</div>
