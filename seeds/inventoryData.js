@@ -3,10 +3,12 @@ const { Inventory } = require('../models/index');
 const data = [
   {
     name: 'Bean',
+    description: 'Canned beans',
     picture: 'beans.jpg',
   },
   {
     name: 'Potato',
+    description: 'Freah Idaho Potato',
     picture: 'potato.jpg',
   },
   {
