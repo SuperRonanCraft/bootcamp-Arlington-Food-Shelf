@@ -1,4 +1,7 @@
 <div class='container'>
+  <div class='text-end my-2'>
+    <a href='/order' class='btn btn-primary'>Start New Order</a>
+  </div>
   {{#if orders}}
     <div class='row'>
       {{#each orders as |order|}}
@@ -24,7 +27,4 @@
     </div>
   {{/if}}
 
-  <div class='text-center mt-2'>
-    <a href='/order' class='btn btn-primary'>Create an Order</a>
-  </div>
 </div>

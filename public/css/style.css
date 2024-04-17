@@ -1,3 +1,7 @@
 .nav-link[aria-current='page'] {
   text-decoration: underline;
 }
+
+form [type='checkbox'] {
+  display: none;
+}
