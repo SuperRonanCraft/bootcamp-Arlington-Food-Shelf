@@ -18,10 +18,15 @@ Order.init(
         key: 'id',
       },
     },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
+    updatedAt: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'order',
