@@ -44,4 +44,13 @@ module.exports = {
       include: [{ model: Inventory }],
     },
   ],
+  orderMap: (obj) => {
+    const newobj = obj.get({ plain: true });
+    let count = 0;
+    for (const orderItem of newobj.orderItems) {
+      count += orderItem.stock;
+    }
+    newobj.total_items = count;
+    return newobj;
+  },
 };

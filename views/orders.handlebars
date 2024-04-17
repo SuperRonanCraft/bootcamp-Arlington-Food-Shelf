@@ -2,18 +2,25 @@
   {{#if orders}}
     <div class='row'>
       {{#each orders as |order|}}
-        <div class='col-12 bg-info mb-2'>
-          <h2>{{id}}</h2>
-          {{#each orderItems as |item|}}
-            <span>{{id}}</span>
-            <span>x{{stock}}</span>
-          {{/each}}
+        <div class='container col-12 bg-info mb-2 card'>
+          <div class='row'>
+
+            <h2 class='col-6 card-title'>Order #{{id}}</h2>
+            <p class='col-6 text-end'>
+              x{{total_items}}</p>
+          </div>
+          <div class='card-body'>
+            {{#each orderItems as |item|}}
+              <span class='fs-3'>{{inventory.name}}</span>
+              <span class='fs-5'>x{{stock}},</span>
+            {{/each}}
+          </div>
         </div>
       {{/each}}
     </div>
   {{else}}
-    <div class='container'>
-      <h2>No Open orders</h2>
+    <div class='text-center'>
+      <h2 class='alert alert-danger'>No Open Orders</h2>
     </div>
   {{/if}}
 

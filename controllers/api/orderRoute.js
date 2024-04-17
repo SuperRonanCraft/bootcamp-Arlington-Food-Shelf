@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Order, OrderItem, User, Inventory } = require('../../models/index');
-const { orderData } = require('../../utils/helpers');
+const { orderData, orderMap } = require('../../utils/helpers');
 
 router.get('/', (req, res) => {
   Order.findAll({
     include: orderData,
   }).then((data) => {
-    const orders = data.map((obj) => obj.get({ plain: true }));
+    const orders = data.map(orderMap);
     console.log(orders);
     res.json(orders);
   });

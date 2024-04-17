@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const { Inventory, Order } = require('../models');
 const auth = require('../utils/auth');
-const { inventoryData, orderData } = require('../utils/helpers');
+const { inventoryData, orderData, orderMap } = require('../utils/helpers');
 
 // Homepage Route
 router.get('/', (req, res) => {
@@ -34,7 +34,7 @@ router.get('/order', auth, (req, res) => {
 router.get('/orders', auth, (req, res) => {
   Order.findAll({ where: { user_id: req.session.user_id }, include: orderData })
     .then((data) => {
-      const orders = data.map((obj) => obj.get({ plain: true }));
+      const orders = data.map(orderMap);
       res.render('orders', { orders });
       console.log(orders);
     })
