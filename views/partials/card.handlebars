@@ -1,0 +1,14 @@
+<section>
+    <div class="row mt-5">
+    {{#each stock as |item|}}
+    <div class='col-sm-6 col-md-4 col-lg-2'>
+    <img src="/images/{{picture}}" class="w-30" alt="food pictures" height="100px">
+    <div class="ml-3">{{name}}</div> 
+    {{description}}
+    {{allergens}}
+    {{categories}}  
+    <button type="button" class="btn btn-info">+Add</button>  
+    </div>
+    {{/each}}
+    </div>
+</section>
