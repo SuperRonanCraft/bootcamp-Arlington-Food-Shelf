@@ -45,6 +45,7 @@ router.post('/login', async (req, res) => {
     const userData = await User.findOne({ where: { email: req.body.email } });
 // Checking if user data is found
     if (!userData) {
+      // Sending a response with a status code of 400 if user data is not found
       res
         .status(400)
         .json({ message: 'Incorrect username or password, please try again' });
