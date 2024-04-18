@@ -1,4 +1,4 @@
-<div class='col-sm-6 col-md-4 col-lg-3'>
+<div class='mb-2 col-sm-6 col-md-4 col-lg-3'>
   <div class='card'>
     <img
       src='/images/{{picture}}'
@@ -6,19 +6,19 @@
       alt='food pictures'
       height='100px'
     />
-    <div class='card-body'>
-      <h2 class='card-title text-center'>{{name}}</h2>
+    <div class='text-center card-body'>
+      <h2 class='card-title'>{{name}}</h2>
       {{description}}
       {{allergens}}
       {{categories}}
       {{#if @root.loggedIn}}
         {{! Inputs }}
         <div class='text-center'>
-          <label class='btn btn-secondary'>
-            <input type='checkbox' name='selected' />
+          <label class='btn btn-secondary mb-2'>
+            <input data-id='{{id}}' type='checkbox' name='selected' />
             Select
           </label>
-          <select class='form-select' aria-label='Default select example'>
+          <select class='form-select' aria-label='select'>
             <option value='0' selected>Select Quantity...</option>
             <option value='1'>1</option>
             <option value='2'>2</option>

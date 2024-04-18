@@ -36,6 +36,13 @@
     {{/each}}
     </div>
   </div>
+  <div class="text-end container">
+    {{#if loggedIn}}
+      <button class="btn btn-primary mb-5" type="submit" id="submit-order">Submit Order</button>
+    {{else}}
+      <h3>Please login to create an order!</h3>
+    {{/if}}
+  </div>
 </form>
 <script src='/js/order.js'></script>
 
