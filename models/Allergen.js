@@ -14,6 +14,7 @@ Allergen.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    // Defining the 'name' attribute as a STRING, which cannot be null
     name: {
       type: DataTypes.STRING,
       allowNull: false,
