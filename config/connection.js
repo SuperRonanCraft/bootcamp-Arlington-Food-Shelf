@@ -11,7 +11,7 @@ if (process.env.DB_URL) {
 } else {
   // Creating a Sequelize instance with parameters for database connection
   sequelize = new Sequelize(
-    process.env.DB_NAME,
+    process.env.DB_NAME, // Database name
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
