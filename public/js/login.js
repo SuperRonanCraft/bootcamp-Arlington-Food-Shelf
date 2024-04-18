@@ -59,3 +59,21 @@ const signup = async (event) => {
 document.querySelector('#signup').addEventListener('submit', signup);
 // This is the event listener for the signup form
 document.querySelector('#login').addEventListener('submit', login);
+
+// Function to show an alert
+function showAlert(message, alertId) {
+  const alertContainer = document.createElement('div');
+  alertContainer.classList.add('alert', 'alert-danger', 'mt-3');
+  alertContainer.setAttribute('id', alertId);
+  alertContainer.textContent = message;
+
+  const closeButton = document.createElement('button');
+  closeButton.classList.add('btn', 'close-btn');
+  closeButton.textContent = 'x';
+  closeButton.addEventListener('click', () => {
+    alertContainer.style.display = 'none';
+  });
+
+  alertContainer.appendChild(closeButton);
+  document.body.appendChild(alertContainer);
+}
