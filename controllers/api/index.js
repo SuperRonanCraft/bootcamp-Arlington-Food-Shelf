@@ -16,4 +16,5 @@ router.use('/inventory', inventoryRoute);
 // Order Routes 
 router.use('/order', orderRoute);
 
+// // Exporting the router module for use in other parts of the application
 module.exports = router;
