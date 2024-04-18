@@ -8,6 +8,7 @@ const Inventory = require('./Inventory');
 const OrderItem = require('./OrderItem');
 // Importing the Category model from './Category'
 const Category = require('./Category');
+// Importing the Allergen model from './Allergen'
 const Allergen = require('./Allergen');
 const AllergenInventory = require('./AllergenInventory');
 const CategoryInventory = require('./CategoryInventory');
