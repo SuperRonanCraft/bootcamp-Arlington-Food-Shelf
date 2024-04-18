@@ -3,8 +3,10 @@ const sequelize = require('../config/connection');
 
 class CategoryInventory extends Model {}
 
+// Initialize the CategoryInventory model with attributes and options
 CategoryInventory.init(
   {
+     // Define attributes for the CategoryInventory model
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -27,7 +29,7 @@ CategoryInventory.init(
     },
   },
   {
-    sequelize,
+    sequelize, // Pass the Sequelize connection
     timestamps: false,
     freezeTableName: true,
     underscored: true,
