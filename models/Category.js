@@ -3,7 +3,10 @@ const sequelize = require('../config/connection');
 
 class Category extends Model {}
 
+// Initialize the Category model with attributes and options
+
 Category.init(
+  // Define attributes for the Category model
   {
     id: {
       type: DataTypes.INTEGER,
