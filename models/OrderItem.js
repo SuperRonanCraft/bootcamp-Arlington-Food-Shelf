@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class OrderItem extends Model {}
 
+// Define attributes for the OrderItem model
 OrderItem.init(
   {
     id: {
