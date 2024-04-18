@@ -1,5 +1,8 @@
 const { Allergen } = require('../models/index');
 
+
+// Define an array of objects containing data for allergens
+
 const data = [
   {
     name: 'peanuts',
