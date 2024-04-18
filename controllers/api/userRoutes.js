@@ -69,6 +69,7 @@ router.post('/login', async (req, res) => {
       res.json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
+    // Handling errors by sending a response with a status code of 400 and error message
     res.status(400).json(err);
   }
 });
