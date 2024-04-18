@@ -24,6 +24,7 @@ router.post('/', async (req, res) => {
         res.status(200).json(userData);
       });
     } else {
+      // Sending a response with a status code of 400 if required fields are missing
       res.status(400).json({
         loggedIn: false,
         message: 'Didnt provide name, email or password!',
