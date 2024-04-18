@@ -1,38 +1,3 @@
-<div class='container mt-5'>
-  <h2 class='mb-4'>Schedule</h2>
-  <div id='schedule-container'></div>
-</div>
-
-<!-- Handlebars template for rendering the schedule -->
-<div id='schedule-template' type='text/x-handlebars-template'>
-  <table class='table table-striped table-hover'>
-    <thead class='table-dark'>
-      <tr>
-        <th>Day</th>
-        <th>Times</th>
-        <th>Additional Sources</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each schedule}}
-        <tr>
-          <td>{{day}}</td>
-          <td>
-            {{#each times}}
-              <div>{{this}}</div>
-            {{/each}}
-          </td>
-          <td class='wrap-text'>
-            {{#each additionalSources}}
-              <p><strong>{{this.name}}:</strong> {{this.description}}</p>
-            {{/each}}
-          </td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-</div>
-
 <div class="container">
   <h2>Calendar</h2>
   <table id="calendar">
@@ -49,6 +14,19 @@
     </thead>
     <tbody></tbody>
   </table>
+
+    <h3>Resources</h3>
+    <ul id="resources">
+        <li><a href="https://vermontfoodhelp.com/"><strong>3SquaresVT</strong> helps you buy food from grocery and convenience stores, farmers markets, and co-ops. 3SquaresVT benefits are loaded each month on an EBT card, which works like a debit card. To find out more and get help applying visit this link or text VFBSNAP to 85511.</a></li>
+        <li><a href="https://www.vtfoodbank.org/share-food/csfp"><strong>Call the Foodbank with questions at (800) 585-2265</strong>.Food for Older Adults: Commodity Supplemental Food Program: If you are aged 60 or older and meet income guidelines, you can get a free box of food every month through the Commodity Supplemental Food Program. For more details and a simple application, go to VTFoodbank.org or call (800) 214-4648.</a></li>
+        <li><a href="https://www.fns.usda.gov/meals4kids"><strong>Summer meal</strong> sites across the state serve free nutritious meals to kids, 0-18. To find meal locations open to all kids near you, view the USDA Summer Meal Map.</a></li>
+        <li><a href="https://www.healthvermont.gov/family/wic"><strong>WIC</strong> gives you access to healthy foods, nutrition education and counseling, breastfeeding support, and community referrals. If you're pregnant, a caregiver, or a parent with a child under five, you may be eligible! To find out more and get help applying, visit this link or text VTWIC to 855-11.</a></li>
+        <li><a href="https://nofavt.org/cropcash/doubleyourmoney"><strong>Crop Cash</strong> helps Vermonters purchase more fresh produce from local farmers! Crop Cash is a coupon program that promotes the purchase of fresh fruits, vegetables, and herbs at farmers markets that accept 3SquaresVT/SNAP benefits. To learn more about using Crop Cash, visit this link.</a></li>
+        <li><a href="https://actbennington.org/resources/for-youth/take-care/#map">The <strong>Take Care Project</strong> is on a mission to expand access to free period products and hygiene essentials in the Bennington region. Explore the Care Map for locations and organizations in Bennington that offer free personal care items including tampons, pads, shampoo, soap, and deodorant.</a></li>
+        <li><a href="https://www.connectingcommuters.org/travel-apps/trip-planner/"><strong>Go Vermont</strong> is here to assist with your transportation needs. If you have questions about your transportation options or need a ride, use the Trip Planner at this link or call the help line at 800-685-RIDE (7433).</a></li>
+        <li><a href="https://vermont211.org/"><strong>Vermont 2-1-1</strong> is a health and human service helpline providing information and referrals 8:00 am-11:00 pm daily. The Community Resource Directory is available online 24/7/365 here.</a></li>
+    </ul>
+
 </div>
 
 
