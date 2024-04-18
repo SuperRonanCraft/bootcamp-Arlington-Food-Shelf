@@ -29,6 +29,7 @@ Allergen.init(
     freezeTableName: true,
     // Using underscored naming for columns
     underscored: true,
+    // Defining the model name as 'allergen'
     modelName: 'allergen',
   },
 );
