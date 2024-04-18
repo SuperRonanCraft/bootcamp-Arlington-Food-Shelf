@@ -25,6 +25,7 @@ Allergen.init(
     sequelize,
     // Disabling timestamps 
     timestamps: false,
+    // Using 'allergen' as the table name
     freezeTableName: true,
     underscored: true,
     modelName: 'allergen',
