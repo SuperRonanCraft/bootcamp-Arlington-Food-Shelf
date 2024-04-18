@@ -111,11 +111,14 @@ header {
 }
 
 body {
-  background-color: var(--tertiary);
+  background-color: #1f354d;
   height: 100vh;
   display: flex;
   flex-direction: column;
   background-image: url('../images/iStock-1201843375.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  bottom: 0;
 }
 
 footer {
