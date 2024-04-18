@@ -12,6 +12,8 @@ router.use('/users', userRoutes);
 
 //Data Routes
 router.use('/inventory', inventoryRoute);
+
+// Order Routes 
 router.use('/order', orderRoute);
 
 module.exports = router;
