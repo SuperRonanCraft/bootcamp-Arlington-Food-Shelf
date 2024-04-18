@@ -6,6 +6,7 @@ const { User } = require('../../models');
 // Create a new user
 router.post('/', async (req, res) => {
   try {
+    // Destructuring name, email, and password from the request body
     const { name, email, password } = req.body;
     if (name && email && password) {
       const userData = await User.create({
