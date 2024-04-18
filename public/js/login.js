@@ -1,19 +1,28 @@
-// Function to show an alert
-function showAlert(message, alertId) {
-  const loginContainer = document.querySelector('#login-container');
-  const existingAlert = document.getElementById(alertId);
+// Function to create and display an alert
+function showAlert(message, alertType) {
+  // Create the alert element
+  const alertContainer = createAlertElement(message, alertType);
 
-  if (existingAlert) {
-    existingAlert.style.display =
-      existingAlert.style.display === 'none' ? 'block' : 'none';
+  // Get the appropriate container based on alert type
+  const container = document.querySelector(`#${alertType}-container`);
+
+  if (!container) {
+    console.error(`Container with ID #${alertType}-container not found.`);
     return;
   }
 
+  container.appendChild(alertContainer);
+}
+
+function createAlertElement(message, alertType) {
+  // Create the alert container with classes
   const alertContainer = document.createElement('div');
-  alertContainer.classList.add('alert', 'alert-danger', 'mt-3');
-  alertContainer.setAttribute('id', alertId);
+  alertContainer.classList.add('alert', `alert-${alertType}`, 'mt-3');
+
+  // Set the alert message
   alertContainer.textContent = message;
 
+  // Create and configure the close button
   const closeButton = document.createElement('button');
   closeButton.classList.add('btn', 'close-btn');
   closeButton.textContent = 'x';
@@ -22,19 +31,29 @@ function showAlert(message, alertId) {
   });
 
   alertContainer.appendChild(closeButton);
-  loginContainer.appendChild(alertContainer);
+
+  return alertContainer;
 }
 
-//Login Event
-const login = async (event) => {
+// Function to check for empty input fields (DRY principle)
+function checkEmptyInputs(nameInput, emailInput, passwordInput) {
+  return (
+    nameInput.value.trim() === '' ||
+    emailInput.value.trim() === '' ||
+    passwordInput.value.trim() === ''
+  );
+}
+
+// Login function
+async function login(event) {
   event.preventDefault();
 
   // Collect values from the login form
   const emailInput = document.querySelector('#login-email');
   const passwordInput = document.querySelector('#login-password');
 
-  if (emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
-    showAlert('Please enter both email and password.', 'alert-login');
+  if (checkEmptyInputs(emailInput, passwordInput)) {
+    showAlert('Please enter both email and password.', 'login');
     return;
   }
 
@@ -47,45 +66,48 @@ const login = async (event) => {
     body: JSON.stringify({ email, password }),
   });
 
-  // If successful, redirect the browser to the homepage
   if (response.ok) {
-    document.location.replace('/');
-    // If not successful, alert the user
+    document.location.replace('/'); // Redirect on successful login (adjust as needed)
   } else {
-    alert('Failed to login!');
+    // Handle login error with more informative message
+    const errorJson = await response.json();
+    showAlert(errorJson.message || 'Failed to login!', 'login');
   }
-};
+}
 
-//Signup Event
-const signup = async (event) => {
+// Signup function (similar improvements)
+async function signup(event) {
   event.preventDefault();
 
   // Collect values from the signup form
-  const name = document.querySelector('#signup-name').value.trim();
-  const email = document.querySelector('#signup-email').value.trim();
-  const password = document.querySelector('#signup-password').value.trim();
+  const nameInput = document.querySelector('#signup-name');
+  const emailInput = document.querySelector('#signup-email');
+  const passwordInput = document.querySelector('#signup-password');
 
-  // Send a POST request to the API endpoint
-  if (name && password && email) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password }),
-    });
-    // If successful, redirect the browser to the homepage
-
-    if (response.ok) {
-      document.location.replace('/');
-      // If not successful, alert the user
-    } else {
-      alert('Error occured creating account!');
-    }
+  if (checkEmptyInputs(nameInput, emailInput, passwordInput)) {
+    showAlert('Please enter a name, email, and password.', 'signup');
+    return;
   }
-};
 
-//User Interaction
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
-// This is the event listener for the login form
+  const response = await fetch('/api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, password }),
+  });
+
+  if (response.ok) {
+    document.location.replace('/'); // Redirect on successful signup (adjust as needed)
+  } else {
+    // Handle signup error with more informative message
+    const errorJson = await response.json();
+    showAlert(errorJson.message || 'Error occured creating account!', 'signup');
+  }
+}
+
+// User Interaction (assuming containers exist)
 document.querySelector('#signup').addEventListener('submit', signup);
-// This is the event listener for the signup form
 document.querySelector('#login').addEventListener('submit', login);
