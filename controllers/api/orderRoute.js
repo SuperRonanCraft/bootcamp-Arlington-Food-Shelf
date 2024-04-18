@@ -77,6 +77,7 @@ router.post('/', async (req, res) => {
       await OrderItem.bulkCreate(orderArray, {
         transaction: t,
       });
+       // Returning the ID of the newly created order
       return order.id;
     });
     //Transaction closed with no errors
