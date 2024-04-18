@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
     const orders = data.map(orderMap);
        // Logging the orders to the console
     console.log(orders);
+    // Sending a JSON response with the orders
     res.json(orders);
   });
 });
