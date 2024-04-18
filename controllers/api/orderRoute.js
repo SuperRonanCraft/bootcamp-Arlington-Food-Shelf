@@ -89,7 +89,7 @@ router.post('/', async (req, res) => {
       },
       include: orderData,
     });
-
+// Sending a response with the newly created order
     res.status(201).json(orderCompleted);
   } catch (err) {
     // The transaction has been rolled back automatically by Sequelize after error!
