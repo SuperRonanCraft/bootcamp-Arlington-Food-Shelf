@@ -21,6 +21,7 @@ Allergen.init(
     },
   },
   {
+    // Passing the sequelize instance for database connection
     sequelize,
     timestamps: false,
     freezeTableName: true,
