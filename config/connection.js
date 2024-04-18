@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 // Importing and configuring dotenv to load environment variables from a .env file
 require('dotenv').config();
 
-let sequelize;
+let sequelize; // Declaring a variable to hold the Sequelize instance
 if (process.env.DB_URL) {
   sequelize = new Sequelize(process.env.DB_URL);
 } else {
