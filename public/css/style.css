@@ -29,7 +29,7 @@
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0) 30%,
-    rgba(0, 0, 0, 1) 55%
+    var(--primary) 55%
   );
   z-index: 1;
 }
@@ -115,6 +115,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url('../images/iStock-1201843375.jpg');
 }
 
 footer {
