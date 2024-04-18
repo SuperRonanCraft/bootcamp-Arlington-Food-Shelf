@@ -1,37 +1,38 @@
-<div class='mb-2 col-sm-6 col-md-4 col-lg-3'>
-  <div class='card'>
-    <img
-      src='/images/{{picture}}'
-      class='card-img-top w-30'
-      alt='food pictures'
-      height='100px'
-    />
-    <div class='text-center card-body'>
-      <h2 class='card-title'>{{name}}</h2>
-      {{description}}
-      {{allergens}}
-      {{categories}}
-      {{#if @root.loggedIn}}
-        {{! Inputs }}
-        <div class='text-center'>
-          <label class='btn btn-secondary mb-2'>
-            <input data-id='{{id}}' type='checkbox' name='selected' />
-            Select
-          </label>
-          <select class='form-select' aria-label='select'>
-            <option value='0' selected>Select Quantity...</option>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
-            <option value='6'>6</option>
-            <option value='7'>7</option>
-            <option value='8'>8</option>
-            <option value='9'>9</option>
-          </select>
-        </div>
-      {{/if}}
+<div class='mb-2 col-sm-12 col-md-6 col-lg-4 stock-card'>
+  <div class='container'>
+    <div
+      class='image-container'
+      style="background: url('/images/{{picture}}') no-repeat center / cover;"
+    >
+    </div>
+    <div class='overlay'>
+      <div class='stock-info text-center text-light h-100 d-flex flex-column'>
+        <h2>{{name}}</h2>
+        {{description}}
+        {{allergens}}
+        {{categories}}
+        {{#if @root.loggedIn}}
+          {{! Inputs }}
+          <div class='text-center mx-2 mt-auto mb-2'>
+            <label class='btn btn-secondary m-2'>
+              <input data-id='{{id}}' type='checkbox' name='selected' />
+              Select
+            </label>
+            <select class='form-select' aria-label='select'>
+              <option value='0' selected>Select Quantity...</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='4'>4</option>
+              <option value='5'>5</option>
+              <option value='6'>6</option>
+              <option value='7'>7</option>
+              <option value='8'>8</option>
+              <option value='9'>9</option>
+            </select>
+          </div>
+        {{/if}}
+      </div>
     </div>
   </div>
 </div>

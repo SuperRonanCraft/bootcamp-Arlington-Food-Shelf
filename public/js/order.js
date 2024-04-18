@@ -1,4 +1,6 @@
 const checkboxes = document.querySelectorAll('form input[type="checkbox"]');
+const submitAlert = document.querySelector('#alert-submit');
+const selectAlert = document.querySelector('#alert-select');
 
 function toggleCheckbox(event) {
   //   event.preventDefault();
@@ -10,7 +12,7 @@ function toggleCheckbox(event) {
   const quantity = Number(selectElement.value);
 
   if (quantity === 0) {
-    alert('Please select a quantity!');
+    selectAlert.style.visibility = 'visible';
     this.checked = false;
     return;
   }
@@ -51,8 +53,7 @@ function submitOrder(event) {
       }
     });
   } else {
-    const stockAlert = document.querySelector('#stock-alert');
-    stockAlert.style.visibility = 'visible';
+    submitAlert.style.visibility = 'visible';
   }
 }
 

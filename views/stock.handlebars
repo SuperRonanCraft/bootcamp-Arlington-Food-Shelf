@@ -27,15 +27,21 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<div class="container-fluid alert alert-danger p-1" id="stock-alert">
+{{!-- Alerts --}}
+<div class="container-fluid alert alert-danger p-1" id="alert-submit">
    <button type="button" class="btn close-btn">x</button>
    <span><strong>Warning!</strong> Please select an item!</span>
 </div>
+<div class="container-fluid alert alert-warning p-1" id="alert-select">
+   <button type="button" class="btn close-btn">x</button>
+   <span><strong>Warning!</strong> Please choose a quantity!</span>
+</div>
+{{!-- Order Form --}}
 <form id="order">
   <div class="container">
     <div class="row mt-5">
     {{#each stock as |item|}}
-      {{> card }}
+      {{> card}}
     {{/each}}
     </div>
   </div>
