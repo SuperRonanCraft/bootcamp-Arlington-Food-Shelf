@@ -4,6 +4,7 @@ const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 // Importing route handlers for inventory-related routes
 const inventoryRoute = require('./inventoryRoute');
+// Importing route handlers for order-related routes
 const orderRoute = require('./orderRoute');
 
 //User Routes
