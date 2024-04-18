@@ -1,5 +1,6 @@
 // Importing the Express module and creating a router instance
 const router = require('express').Router();
+// Importing the User model from the models directory
 const { User } = require('../../models');
 
 // Create a new user
