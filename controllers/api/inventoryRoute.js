@@ -1,3 +1,4 @@
+// Importing the Express module and creating a router instance
 const router = require('express').Router();
 const { Inventory } = require('../../models/index');
 const { inventoryData } = require('../../utils/helpers');
