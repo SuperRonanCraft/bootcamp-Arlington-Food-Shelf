@@ -1,5 +1,7 @@
 const { Inventory } = require('../models/index');
 
+// Define an array of objects containing data for inventory items
+
 const data = [
   {
     name: 'Bean',
