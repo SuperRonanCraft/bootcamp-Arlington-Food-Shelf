@@ -7,6 +7,7 @@ const { Order, OrderItem, User, Inventory } = require('../../models/index');
 // Importing helper functions for order-related operations
 const { orderData, orderMap } = require('../../utils/helpers');
 
+// Route to fetch all orders
 router.get('/', (req, res) => {
   Order.findAll({
     include: orderData,
