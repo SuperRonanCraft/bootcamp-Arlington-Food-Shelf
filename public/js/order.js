@@ -58,14 +58,19 @@ function submitOrder(event) {
 }
 
 function closeAlert(event) {
-  event.target.parentElement.style.visibility = 'hidden';
-  const alertElement = document.getElementById(alertId);
-  alertElement.style.display =
-    alertElement.style.display === 'none' ? 'block' : 'none';
+  // event.target.parentElement.style.visibility = 'hidden';
+  const alertElement = event.target.closest('.alert');
+  if (alertElement) {
+    alertElement.style.visibility = 'hidden';
+  }
 }
 
 document.querySelector('#submit-order').addEventListener('click', submitOrder);
-document.querySelector('.close-btn').addEventListener('click', closeAlert);
+
+const closeButtons = document.querySelectorAll('.close-btn');
+closeButtons.forEach((button) => {
+  button.addEventListener('click', closeAlert);
+});
 
 for (const checkbox of checkboxes) {
   checkbox.addEventListener('change', toggleCheckbox);
