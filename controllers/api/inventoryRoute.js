@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
     include: inventoryData, // This includes associated data like categories or locations
   })
     .then((data) => {
+  // Mapping the retrieved data to plain objects
       const inv = data.map((obj) => obj.get({ plain: true }));
       console.log(inv);
       res.status(200).json(inv);
