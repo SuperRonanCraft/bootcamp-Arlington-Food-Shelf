@@ -2,6 +2,7 @@
 const User = require('./User');
 // Importing the Order model from './Order'
 const Order = require('./Order');
+// Importing the Inventory model from './Inventory'
 const Inventory = require('./Inventory');
 const OrderItem = require('./OrderItem');
 const Category = require('./Category');
