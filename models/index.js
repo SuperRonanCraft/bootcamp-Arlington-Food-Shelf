@@ -1,3 +1,4 @@
+// Importing the User model from './User'
 const User = require('./User');
 const Order = require('./Order');
 const Inventory = require('./Inventory');
