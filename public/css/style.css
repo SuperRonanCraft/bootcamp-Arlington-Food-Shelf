@@ -86,6 +86,11 @@ form [type='checkbox'] {
   margin: 0 auto;
 }  */
 
+.carousel-img {
+  object-fit: contain;
+  max-height: 500px; /* Adjust this value as needed */
+}
+
 .bio-card {
   max-width: 800px; /* Adjust the maximum width as needed */
   margin: 0 auto; /* Center the card horizontally */
