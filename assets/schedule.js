@@ -1,9 +1,9 @@
 
 // module exports
 module.exports = {
-  schedule: [
+  schedule: [ // displays the store hours, times, and additional resources 
     {
-      day: 'Tuesday',
+      day: 'Tuesday', 
       times: ['1st Tuesday 1:30-4 pm', '3rd Tuesday 3:30-5 pm'],
       additionalSources: [
         {
