@@ -12,6 +12,7 @@ module.exports = {
           description: '3SquaresVT helps you buy food from grocery and convenience stores, farmers markets, and co-ops. 3SquaresVT benefits are loaded each month on an EBT card, which works like a debit card. To find out more and get help applying visit VermontFoodHelp.com or text VFBSNAP to 85511.',
         },
         {
+          // Meals for Kids resource name and description
           name: 'Meals for Kids',
           description: 'Summer meal sites across the state serve free nutritious meals to kids, 0-18. To find meal locations open to all kids near you, view this sheet of Open Meal Site Locations or the USDA Summer Meal Map.',
         },
