@@ -27,6 +27,7 @@ Allergen.init(
     timestamps: false,
     // Using 'allergen' as the table name
     freezeTableName: true,
+    // Using underscored naming for columns
     underscored: true,
     modelName: 'allergen',
   },
