@@ -7,6 +7,7 @@ class Allergen extends Model {}
 // Initializing the Allergen model with attribute definitions and model options
 Allergen.init(
   {
+    // Defining the 'id' attribute as an INTEGER, a primary key, and auto-incrementing
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
