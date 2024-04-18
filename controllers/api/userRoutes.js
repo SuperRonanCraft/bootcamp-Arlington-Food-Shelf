@@ -84,6 +84,7 @@ router.post('/logout', (req, res) => {
       res.status(204).end();
     });
   } else {
+    // Sending a response with a status code of 404 if the user is not logged in
     res.status(404).end();
   }
 });
