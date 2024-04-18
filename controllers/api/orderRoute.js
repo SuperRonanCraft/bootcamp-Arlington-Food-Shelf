@@ -25,6 +25,7 @@ router.get('/', (req, res) => {
 //Delete an order
 router.delete('/:id', async (req, res) => {
   try {
+     // Deleting the order with the specified ID
     const deletedOrder = await Order.destroy({ where: { id: req.params.id } });
     res
       .status(200)
