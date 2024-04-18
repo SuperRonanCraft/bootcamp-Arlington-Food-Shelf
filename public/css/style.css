@@ -1,6 +1,6 @@
-* {
+/* * {
   border: red solid 1px;
-}
+} */
 
 :root {
   --primary: #334952;
@@ -122,6 +122,7 @@ footer {
   width: 100%;
   background: var(--primary);
   color: var(--quaternary);
+  padding: 0.5rem;
 }
 
 .navbar {
