@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
   Order.findAll({
     include: orderData,
   }).then((data) => {
+    // Mapping the retrieved data to a desired format using orderMap function
     const orders = data.map(orderMap);
     console.log(orders);
     res.json(orders);
