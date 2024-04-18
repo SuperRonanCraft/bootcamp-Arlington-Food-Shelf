@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
       const inv = data.map((obj) => obj.get({ plain: true }));
    // Logging the retrieved inventory items to the console
       console.log(inv);
+      // Sending a JSON response with the retrieved inventory items
       res.status(200).json(inv);
     })
     .catch((err) => {
