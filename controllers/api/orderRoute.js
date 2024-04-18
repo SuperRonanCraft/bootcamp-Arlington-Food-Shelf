@@ -54,6 +54,7 @@ router.post('/', async (req, res) => {
   try {
     //Start of SQL transaction (if an error happens, it will rollback automatically)
     const order_id = await sequelize.transaction(async (t) => {
+      // Creating a new order with the user ID from the session
       const order = await Order.create(
         {
           user_id: req.session.user_id,
