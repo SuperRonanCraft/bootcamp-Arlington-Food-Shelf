@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
     .then((data) => {
   // Mapping the retrieved data to plain objects
       const inv = data.map((obj) => obj.get({ plain: true }));
+   // Logging the retrieved inventory items to the console
       console.log(inv);
       res.status(200).json(inv);
     })
