@@ -19,23 +19,23 @@ router.get('/about', (req, res) => {
 });
 
 // Order Route
-router.get('/order', auth, (req, res) => {
-  Inventory.findAll({ include: inventoryData })
-    .then((data) => {
-      const stock = data.map((obj) => obj.get({ plain: true }));
-      res.render('order', { stock });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).send(err);
-    });
-});
+// router.get('/order', auth, (req, res) => {
+//   Inventory.findAll({ include: inventoryData })
+//     .then((data) => {
+//       const stock = data.map((obj) => obj.get({ plain: true }));
+//       res.render('order', { stock });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500).send(err);
+//     });
+// });
 
 router.get('/orders', auth, (req, res) => {
   Order.findAll({ where: { user_id: req.session.user_id }, include: orderData })
     .then((data) => {
       const orders = data.map(orderMap);
-      res.render('orders', { orders });
+      res.render('orders', { orders, loggedIn: req.session.loggedIn });
       console.log(orders);
     })
     .catch((err) => {
@@ -58,7 +58,8 @@ router.get('/stock', (req, res) => {
   Inventory.findAll({ include: inventoryData })
     .then((data) => {
       const stock = data.map((obj) => obj.get({ plain: true }));
-      res.render('menu', { stock });
+      console.log(req.session.loggedIn);
+      res.render('stock', { stock, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -71,6 +72,11 @@ router.get('/login', (req, res) => {
   const loggedIn = req.session.loggedIn;
   if (loggedIn) res.redirect('/');
   else res.render('login');
+});
+
+//Kicks back to home if invalid url
+router.get('*', (req, res) => {
+  res.redirect('/');
 });
 
 module.exports = router;

@@ -37,7 +37,7 @@ const signup = async (event) => {
 
   // Send a POST request to the API endpoint
   if (name && password && email) {
-    const response = await fetch('/api/signup', {
+    const response = await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password }),
