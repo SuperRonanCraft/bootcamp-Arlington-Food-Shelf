@@ -57,20 +57,7 @@ function submitOrder(event) {
   }
 }
 
-function closeAlert(event) {
-  // event.target.parentElement.style.visibility = 'hidden';
-  const alertElement = event.target.closest('.alert');
-  if (alertElement) {
-    alertElement.style.visibility = 'hidden';
-  }
-}
-
 document.querySelector('#submit-order').addEventListener('click', submitOrder);
-
-const closeButtons = document.querySelectorAll('.close-btn');
-closeButtons.forEach((button) => {
-  button.addEventListener('click', closeAlert);
-});
 
 for (const checkbox of checkboxes) {
   checkbox.addEventListener('change', toggleCheckbox);

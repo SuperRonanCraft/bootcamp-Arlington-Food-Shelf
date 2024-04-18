@@ -64,6 +64,8 @@
   z-index: 1000;
 }
 
+#alert-login,
+#alert-signup,
 #alert-submit,
 #alert-select {
   visibility: hidden;
@@ -141,6 +143,16 @@ footer {
   background: var(--secondary);
   color: var(--quaternary);
   border: var(--primary);
+}
+
+.alert .close-btn {
+  background: rgba(0, 0, 0, 0);
+  color: var(--primary);
+  border: rgba(0, 0, 0, 0);
+}
+
+.alert .close-btn:hover {
+  color: var(--secondary);
 }
 
 .btn {

@@ -109,11 +109,11 @@
 
 {{!-- Alerts --}}
 <div class="container-fluid alert alert-danger p-1" id="alert-submit">
-   <button type="button" class="btn close-btn" onclick="toggleAlert('alert-submit')">x</button>
+   <button type="button" class="btn close-btn" onclick="closeAlert('alert-submit')">x</button>
    <span><strong>Warning!</strong> Please select an item!</span>
 </div>
 <div class="container-fluid alert alert-warning p-1" id="alert-select">
-   <button type="button" class="btn close-btn" onclick="toggleAlert('alert-select')">x</button>
+   <button type="button" class="btn close-btn" onclick="closeAlert('alert-select')">x</button>
    <span><strong>Warning!</strong> Please choose a quantity!</span>
 </div>
 {{!-- Order Form --}}
@@ -136,6 +136,7 @@
 </form>
 </main>
 <script src='/js/order.js'></script>
+<script src='/js/alerts.js'></script>
 
 
 
