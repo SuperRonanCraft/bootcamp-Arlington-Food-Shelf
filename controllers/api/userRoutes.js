@@ -88,5 +88,5 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
-
+// Exporting the router module for use in other parts of the application
 module.exports = router;
