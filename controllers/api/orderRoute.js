@@ -4,6 +4,7 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 // Importing necessary models from the models/index file
 const { Order, OrderItem, User, Inventory } = require('../../models/index');
+// Importing helper functions for order-related operations
 const { orderData, orderMap } = require('../../utils/helpers');
 
 router.get('/', (req, res) => {
