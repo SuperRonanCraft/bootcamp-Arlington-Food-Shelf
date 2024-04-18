@@ -4,8 +4,10 @@ const sequelize = require('../config/connection');
 
 class AllergenInventory extends Model {}
 
+// Initialize the AllergenInventory model with attributes and options
 AllergenInventory.init(
   {
+    // Define attributes for the AllergenInventory model
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
