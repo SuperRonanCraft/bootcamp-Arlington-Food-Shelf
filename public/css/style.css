@@ -144,3 +144,8 @@ footer {
   color: var(--quaternary);
   border: solid 2px var(--tertiary);
 }
+
+.carousel-inner {
+  background: var(--primary);
+  border-radius: 20px;
+}
