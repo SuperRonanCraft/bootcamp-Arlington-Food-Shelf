@@ -61,7 +61,7 @@ router.post('/', async (req, res) => {
         },
         { transaction: t },
       );
-
+// Creating an array to store order items
       const orderArray = [];
 
       for (const item of order_data) {
