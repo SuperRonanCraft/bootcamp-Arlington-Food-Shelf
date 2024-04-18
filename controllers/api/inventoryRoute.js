@@ -7,6 +7,7 @@ const { inventoryData } = require('../../utils/helpers');
 
 // Defining a route handler for GET requests to the '/' endpoint
 router.get('/', (req, res) => {
+// Finding all inventory items from the database, including associated data defined by the inventoryData helper
   Inventory.findAll({
     include: inventoryData,
   })
