@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
       res.status(200).json(inv);
     })
     .catch((err) => {
+    // Handling errors by sending a 500 status code and the error message
       res.status(500).send(err);
     });
 });
