@@ -153,3 +153,8 @@ footer {
   background: var(--primary);
   border-radius: 20px;
 }
+
+#homepage-card {
+  margin-top: 3rem;
+  border-radius: 20px;
+}
