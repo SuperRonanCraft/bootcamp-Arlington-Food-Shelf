@@ -83,11 +83,16 @@ form [type='checkbox'] {
 .btn.active {
   background-color: var(--secondary) !important;
 }
-
+/* 
 .about-carousel {
   max-width: 60%;
-  min-width: 300px; /* Adjust this value to your desired minimum width */
+  min-width: 300px;
   margin: 0 auto;
+}  */
+
+.carousel-img {
+  object-fit: contain;
+  max-height: 500px; /* Adjust this value as needed */
 }
 
 .bio-card {
@@ -107,6 +112,7 @@ header {
 
 body {
   background-color: var(--tertiary);
+  height: 100%;
 }
 
 main {

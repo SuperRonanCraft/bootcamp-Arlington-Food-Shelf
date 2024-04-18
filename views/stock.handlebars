@@ -1,31 +1,112 @@
-
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/images/dairy-products.jpg" class="d-block w-100" alt="dairy products" height="500px">
+<div class='container'>
+  <h1 class='text-center my-4'>View our In-Stock Items</h1>
+  
+  <div 
+    id="carouselExampleIndicators" 
+    class="carousel slide" 
+    data-bs-ride="carousel"
+  >
+    <div class='carousel-indicators'>
+      <button
+        type='button'
+        data-bs-target='#carouselExampleIndicators'
+        data-bs-slide-to='0'
+        class='active'
+        aria-current='true'
+        aria-label='Slide 1'
+      ></button>
+      <button
+        type='button'
+        data-bs-target='#carouselExampleIndicators'
+        data-bs-slide-to='1'
+        aria-label='Slide 2'
+      ></button>
+      <button
+        type='button'
+        data-bs-target='#carouselExampleIndicators'
+        data-bs-slide-to='2'
+        aria-label='Slide 3'
+      ></button>
+      <button
+        type='button'
+        data-bs-target='#carouselExampleIndicators'
+        data-bs-slide-to='3'
+        aria-label='Slide 4'
+      ></button>
+      <button
+        type='button'
+        data-bs-target='#carouselExampleIndicators'
+        data-bs-slide-to='4'
+        aria-label='Slide 5'
+      ></button>
     </div>
-    <div class="carousel-item">
-      <img src="/images/produce.jpg" class="d-block w-100" alt="produce" height="500px">
+    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img 
+          src="/images/dairy-products.jpg" 
+          class="d-block w-100 carousel-img" 
+          alt="dairy products" 
+          height="500px"
+        />
+      </div>
+      <div class="carousel-item">
+        <img 
+          src="/images/produce.jpg" 
+          class="d-block w-100 carousel-img" 
+          alt="produce" 
+          height="500px"
+        />
+      </div>
+      <div class="carousel-item">
+        <img 
+          src="/images/snacks.jpg" 
+          class="d-block w-100 carousel-img" 
+          alt="snacks" 
+          height="500px"
+        />
+      </div>
+      <div class="carousel-item">
+        <img 
+          src="/images/frozenfoods.png" 
+          class="d-block w-100 carousel-img" 
+          alt="frozen foods" 
+          height="500px"
+        />
+      </div>
+      <div class="carousel-item">
+        <img 
+          src="/images/meats.jpg" 
+          class="d-block w-100 carousel-img" 
+          alt="meats" 
+          height="500px"
+        />
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="/images/snacks.jpg" class="d-block w-100" alt="snacks" height="500px">
-    </div>
-    <div class="carousel-item">
-      <img src="/images/frozenfoods.png" class="d-block w-100" alt="frozen foods" height="500px">
-    </div>
-    <div class="carousel-item">
-      <img src="/images/meats.jpg" class="d-block w-100" alt="meats" height="500px">
-    </div>
+    <button 
+      class="carousel-control-prev" 
+      type="button" 
+      data-bs-target="#carouselExampleIndicators" 
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button 
+      class="carousel-control-next" 
+      type="button" 
+      data-bs-target="#carouselExampleIndicators" 
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+
+<p class='text-center my-4'>Here is what is on our shelf:</p>
+
 </div>
+
 {{!-- Alerts --}}
 <div class="container-fluid alert alert-danger p-1" id="alert-submit">
    <button type="button" class="btn close-btn">x</button>
