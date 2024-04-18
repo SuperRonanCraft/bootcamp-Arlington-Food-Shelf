@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
   }).then((data) => {
     // Mapping the retrieved data to a desired format using orderMap function
     const orders = data.map(orderMap);
+       // Logging the orders to the console
     console.log(orders);
     res.json(orders);
   });
