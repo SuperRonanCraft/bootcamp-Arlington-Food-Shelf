@@ -5,6 +5,7 @@ const { Inventory } = require('../../models/index');
 // Importing the inventoryData helper function from the utils/helpers file
 const { inventoryData } = require('../../utils/helpers');
 
+// Defining a route handler for GET requests to the '/' endpoint
 router.get('/', (req, res) => {
   Inventory.findAll({
     include: inventoryData,
