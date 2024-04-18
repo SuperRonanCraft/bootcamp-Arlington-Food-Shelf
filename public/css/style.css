@@ -166,18 +166,18 @@ footer {
 
 #calendar {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate; /* Changed from 'collapse' to 'separate' */
   table-layout: fixed;
+  border-spacing: 5px; /* Added spacing between cells */
 }
 
 #calendar th,
 #calendar td {
-  padding: 10px;
   text-align: center;
-  border: 1px solid #ddd;
   background-color: #f5f5f5;
-  width: calc(100% / 7); /* Set equal width for each cell */
-  height: 100px; /* Set a fixed height for each cell */
+  width: calc(100% / 7); /* Reset to full width */
+  height: 100px; /* Reset to original height */
+  border: none; /* Removed cell borders */
 }
 
 #calendar th {
