@@ -17,6 +17,7 @@ module.exports = {
           description: 'Summer meal sites across the state serve free nutritious meals to kids, 0-18. To find meal locations open to all kids near you, view this sheet of Open Meal Site Locations or the USDA Summer Meal Map.',
         },
         {
+          // // The Take Care Project resource name and description
           name: 'The Take Care Project',
           description: 'The Take Care Project is on a mission to expand access to free period products and hygiene essentials in the Bennington region. Explore the Care Map for locations and organizations in Bennington that offer free personal care items including tampons, pads, shampoo, soap, and deodorant.',
         },
