@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.loggedIn = true;
-
+// Sending a response with the newly created user data
         res.status(200).json(userData);
       });
     } else {
