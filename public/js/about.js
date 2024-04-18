@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Select the carousel element for autoplaying
   var carousel = document.querySelector('#carouselAutoplaying');
+  // Select the element where the bio text will be displayed
   var carouselBio = document.querySelector('#carouselBio');
+  // Define an array of bios
   var bios = [
     'Andrea has been with the Arlington Food Shelf for 5 years. He runs our operations team.',
     'Cristina is our head of people relations. She loves working withour various partners to ensure that the Food Shelf remains stocked year-round',
@@ -14,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
     carouselBio.textContent = bios[currentSlide];
   });
 });
+
+
+// initilize Google Map 
 
 function initMap() {
   const location = { lat: 43.06234, lng: -73.143 };
