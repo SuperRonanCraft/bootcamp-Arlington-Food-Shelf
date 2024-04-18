@@ -9,7 +9,7 @@ const { inventoryData } = require('../../utils/helpers');
 router.get('/', (req, res) => {
 // Finding all inventory items from the database, including associated data defined by the inventoryData helper
   Inventory.findAll({
-    include: inventoryData,
+    include: inventoryData, // This includes associated data like categories or locations
   })
     .then((data) => {
       const inv = data.map((obj) => obj.get({ plain: true }));
