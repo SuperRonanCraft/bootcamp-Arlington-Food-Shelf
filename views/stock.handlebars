@@ -27,7 +27,10 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
+<div class="container-fluid alert alert-danger p-1" id="stock-alert">
+   <button type="button" class="btn close-btn">x</button>
+   <span><strong>Warning!</strong> Please select an item!</span>
+</div>
 <form id="order">
   <div class="container">
     <div class="row mt-5">
@@ -36,11 +39,11 @@
     {{/each}}
     </div>
   </div>
-  <div class="text-end container">
+  <div class="text-end">
     {{#if loggedIn}}
-      <button class="btn btn-primary mb-5" type="submit" id="submit-order">Submit Order</button>
+      <button class="btn btn-primary m-3 bottom-right" type="submit" id="submit-order">Submit Order</button>
     {{else}}
-      <h3>Please login to create an order!</h3>
+      <h3 class="text-center">Please login to create an order!</h3>
     {{/if}}
   </div>
 </form>

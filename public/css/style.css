@@ -16,6 +16,19 @@
   object-fit: cover;
 }
 
+.bottom-right {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#stock-alert {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
 .nav-link {
   color: var(--quaternary);
 }

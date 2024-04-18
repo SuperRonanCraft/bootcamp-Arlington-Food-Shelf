@@ -37,21 +37,31 @@ function submitOrder(event) {
     }
   }
 
-  fetch('/api/order', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ order_data }),
-  }).then((response) => {
-    if (response.ok) {
-      document.location.replace('/orders');
-      // If not successful, alert the user
-    } else {
-      alert('Error occured creating order!');
-    }
-  });
+  if (order_data.length > 0) {
+    fetch('/api/order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ order_data }),
+    }).then((response) => {
+      if (response.ok) {
+        document.location.replace('/orders');
+        // If not successful, alert the user
+      } else {
+        alert('Error occured creating order!');
+      }
+    });
+  } else {
+    const stockAlert = document.querySelector('#stock-alert');
+    stockAlert.style.visibility = 'visible';
+  }
+}
+
+function closeAlert(event) {
+  event.target.parentElement.style.visibility = 'hidden';
 }
 
 document.querySelector('#submit-order').addEventListener('click', submitOrder);
+document.querySelector('.close-btn').addEventListener('click', closeAlert);
 
 for (const checkbox of checkboxes) {
   checkbox.addEventListener('change', toggleCheckbox);

@@ -59,7 +59,7 @@ router.get('/stock', (req, res) => {
     .then((data) => {
       const stock = data.map((obj) => obj.get({ plain: true }));
       console.log(req.session.loggedIn);
-      res.render('menu', { stock, loggedIn: req.session.loggedIn });
+      res.render('stock', { stock, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
