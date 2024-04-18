@@ -21,7 +21,7 @@ const login = async (event) => {
     } else {
       console.log(response);
       console.log(email, password);
-      alert('Faileh to login!');
+      alert('Failed to login!');
     }
   }
 };
