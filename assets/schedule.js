@@ -7,7 +7,8 @@ module.exports = {
       times: ['1st Tuesday 1:30-4 pm', '3rd Tuesday 3:30-5 pm'], // displays the time 
       additionalSources: [ // provides additional resources 
         {
-          name: '3SquaresVT',
+          // 3SquareVT resource name and description 
+          name: '3SquaresVT', 
           description: '3SquaresVT helps you buy food from grocery and convenience stores, farmers markets, and co-ops. 3SquaresVT benefits are loaded each month on an EBT card, which works like a debit card. To find out more and get help applying visit VermontFoodHelp.com or text VFBSNAP to 85511.',
         },
         {
