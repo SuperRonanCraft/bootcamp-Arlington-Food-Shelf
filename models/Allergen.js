@@ -1,5 +1,6 @@
 // Importing Sequelize modules
 const { Model, DataTypes } = require('sequelize');
+// Importing the Sequelize instance created in the connection configuration
 const sequelize = require('../config/connection');
 
 class Allergen extends Model {}
