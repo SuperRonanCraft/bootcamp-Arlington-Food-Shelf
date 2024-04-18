@@ -13,7 +13,7 @@ if (process.env.DB_URL) {
   sequelize = new Sequelize(
     process.env.DB_NAME, // Database name
     process.env.DB_USER, // Database username
-    process.env.DB_PASSWORD,
+    process.env.DB_PASSWORD, // Database password
     {
       host: 'localhost',
       dialect: 'postgres',
