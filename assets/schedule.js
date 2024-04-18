@@ -4,7 +4,7 @@ module.exports = {
   schedule: [ // displays the day and hours they are open and provides additinal resources 
     {
       day: 'Tuesday', // displays the day
-      times: ['1st Tuesday 1:30-4 pm', '3rd Tuesday 3:30-5 pm'],
+      times: ['1st Tuesday 1:30-4 pm', '3rd Tuesday 3:30-5 pm'], // displays the time 
       additionalSources: [
         {
           name: '3SquaresVT',
