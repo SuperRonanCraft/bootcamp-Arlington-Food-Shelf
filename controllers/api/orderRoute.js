@@ -32,6 +32,7 @@ router.delete('/:id', async (req, res) => {
       .status(200)
       .json({ deleted: deletedOrder >= 1 ? true : false, deletedOrder });
   } catch (err) {
+     // Handling errors by logging and sending an error response
     console.log(err);
     res.status(500).send(err);
   }
