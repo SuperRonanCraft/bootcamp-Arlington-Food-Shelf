@@ -40,6 +40,7 @@ router.delete('/:id', async (req, res) => {
 
 //Create a new Order
 router.post('/', async (req, res) => {
+    // Checking if the user is logged in
   if (!req.session.user_id) {
     res.status(404).json({
       message: 'Must be logged in to create a new order!',
