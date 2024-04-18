@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
   try {
     // Finding a user by email
     const userData = await User.findOne({ where: { email: req.body.email } });
-
+// Checking if user data is found
     if (!userData) {
       res
         .status(400)
