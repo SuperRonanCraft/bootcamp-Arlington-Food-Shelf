@@ -17,6 +17,7 @@ if (process.env.DB_URL) {
     {
       host: 'localhost', // Database host
       dialect: 'postgres',  // Database dialect (e.g., MySQL, PostgreSQL)
+      // Configuring logging based on the value of the DB_DISABLE_LOGGING environment variable
       logging: process.env.DB_DISABLE_LOGGING === 'true' ? false : console.log,
     },
   );
