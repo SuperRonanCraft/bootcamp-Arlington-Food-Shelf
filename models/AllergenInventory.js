@@ -1,3 +1,4 @@
+// Importing necessary classes from the Sequelize library.
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
