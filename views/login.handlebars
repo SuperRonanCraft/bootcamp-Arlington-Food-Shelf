@@ -1,3 +1,22 @@
+{{! Login Alert }}
+<div class='container-fluid alert alert-danger p-1' id='alert-login'>
+  <button
+    type='button'
+    class='btn close-btn'
+    onclick="closeAlert('alert-login')"
+  >x</button>
+  <span><strong>Error!</strong> Failed to login, invalid email/password!</span>
+</div>
+{{! Signup Alert }}
+<div class='container-fluid alert alert-danger p-1' id='alert-signup'>
+  <button
+    type='button'
+    class='btn close-btn'
+    onclick="closeAlert('alert-signup')"
+  >x</button>
+  <span><strong>Error!</strong>
+    Failed to signup! Please contact support if this persists!</span>
+</div>
 <div class='container'>
   <div class='row'>
     {{! Login Form }}
@@ -12,6 +31,7 @@
             id='login-email'
             placeholder='john@doe.com'
             autocomplete='username'
+            required
           />
         </div>
 
@@ -22,6 +42,7 @@
             class='form-control'
             id='login-password'
             autocomplete='current-password'
+            required
           />
         </div>
 
@@ -42,6 +63,7 @@
             class='form-control'
             id='signup-name'
             placeholder='John Doe'
+            required
           />
         </div>
         <div class='form-group'>
@@ -51,11 +73,17 @@
             class='form-control'
             id='signup-email'
             placeholder='john@doe.com'
+            required
           />
         </div>
         <div class='form-group'>
           <label class='fs-3' for='signup-password'>Password</label>
-          <input type='password' class='form-control' id='signup-password' />
+          <input
+            type='password'
+            class='form-control'
+            id='signup-password'
+            required
+          />
         </div>
 
         <button
@@ -69,3 +97,4 @@
   </div>
 </div>
 <script src='/js/login.js'></script>
+<script src='/js/alerts.js'></script>
