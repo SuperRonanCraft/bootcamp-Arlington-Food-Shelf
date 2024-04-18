@@ -1,5 +1,8 @@
 const { User } = require('../models');
 
+
+// Define an array of objects containing data for user accounts
+
 const data = [
   {
     name: 'vitor',
