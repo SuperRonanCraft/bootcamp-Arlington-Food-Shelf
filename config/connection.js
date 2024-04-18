@@ -4,6 +4,7 @@ const Sequelize = require('sequelize');
 require('dotenv').config();
 
 let sequelize; // Declaring a variable to hold the Sequelize instance
+// Checking if the environment variable DB_URL is set
 if (process.env.DB_URL) {
   sequelize = new Sequelize(process.env.DB_URL);
 } else {
