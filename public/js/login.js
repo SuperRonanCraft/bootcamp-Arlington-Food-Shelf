@@ -1,5 +1,14 @@
 // Function to show an alert
 function showAlert(message, alertId) {
+  const loginContainer = document.querySelector('#login-container');
+  const existingAlert = document.getElementById(alertId);
+
+  if (existingAlert) {
+    existingAlert.style.display =
+      existingAlert.style.display === 'none' ? 'block' : 'none';
+    return;
+  }
+
   const alertContainer = document.createElement('div');
   alertContainer.classList.add('alert', 'alert-danger', 'mt-3');
   alertContainer.setAttribute('id', alertId);
@@ -13,7 +22,7 @@ function showAlert(message, alertId) {
   });
 
   alertContainer.appendChild(closeButton);
-  document.body.appendChild(alertContainer);
+  loginContainer.appendChild(alertContainer);
 }
 
 //Login Event
