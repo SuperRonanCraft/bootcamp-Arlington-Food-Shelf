@@ -15,7 +15,7 @@ if (process.env.DB_URL) {
     process.env.DB_USER, // Database username
     process.env.DB_PASSWORD, // Database password
     {
-      host: 'localhost',
+      host: 'localhost', // Database host
       dialect: 'postgres',
       logging: process.env.DB_DISABLE_LOGGING === 'true' ? false : console.log,
     },
