@@ -1,5 +1,6 @@
 // Importing the Express module and creating a router instance
 const router = require('express').Router();
+// Importing the Sequelize instance for database connection
 const sequelize = require('../../config/connection');
 const { Order, OrderItem, User, Inventory } = require('../../models/index');
 const { orderData, orderMap } = require('../../utils/helpers');
