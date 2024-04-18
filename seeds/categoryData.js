@@ -1,5 +1,7 @@
 const { Category } = require('../models/index');
 
+// Define an array of objects containing data for categories
+
 const data = [
   {
     name: 'produce',
