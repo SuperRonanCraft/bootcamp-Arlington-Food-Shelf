@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
     const { name, email, password } = req.body;
     // Checking if name, email, and password are provided
     if (name && email && password) {
+      // Creating a new user with the provided data
       const userData = await User.create({
         name,
         email,
