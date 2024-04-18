@@ -60,7 +60,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
-
+// Saving user ID and setting loggedIn flag in session
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.loggedIn = true;
