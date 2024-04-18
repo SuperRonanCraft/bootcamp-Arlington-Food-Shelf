@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
-
+// Checking if the provided password matches the stored password hash
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
