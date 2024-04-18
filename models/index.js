@@ -11,6 +11,7 @@ const Category = require('./Category');
 // Importing the Allergen model from './Allergen'
 const Allergen = require('./Allergen');
 const AllergenInventory = require('./AllergenInventory');
+// Importing the CategoryInventory model from './CategoryInventory'
 const CategoryInventory = require('./CategoryInventory');
 
 // USER and ORDER
