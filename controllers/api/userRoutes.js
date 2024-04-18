@@ -80,6 +80,7 @@ router.post('/logout', (req, res) => {
   // Checking if the user is logged in
   if (req.session.loggedIn) {
     req.session.destroy(() => {
+      // Destroying the session and sending a response with a status code of 204
       res.status(204).end();
     });
   } else {
