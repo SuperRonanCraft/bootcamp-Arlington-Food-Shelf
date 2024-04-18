@@ -8,6 +8,7 @@ router.post('/', async (req, res) => {
   try {
     // Destructuring name, email, and password from the request body
     const { name, email, password } = req.body;
+    // Checking if name, email, and password are provided
     if (name && email && password) {
       const userData = await User.create({
         name,
