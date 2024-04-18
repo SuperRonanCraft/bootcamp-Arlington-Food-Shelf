@@ -1,6 +1,6 @@
-/* * {
-  border: red solid 1px;
-} */
+* {
+  /* border: red solid 1px; */
+}
 
 :root {
   --primary: #334952;
@@ -124,11 +124,13 @@ body {
 }
 
 footer {
+  display: flex;
   margin-top: auto;
   width: 100%;
   background: var(--primary);
   color: var(--quaternary);
-  padding: 0.5rem;
+  padding: 1rem;
+  justify-content: center;
 }
 
 .navbar {
@@ -196,9 +198,17 @@ footer {
   background-color: #f2f2f2;
 }
 
+.calender {
+  color: var(--primary);
+}
+
 .event {
   font-weight: bold;
   color: blue;
+}
+
+.resources {
+  color: var(--tertiary);
 }
 
 #resources {
@@ -230,4 +240,16 @@ footer {
   position: relative;
   top: 0;
   left: 0;
+}
+
+h1 {
+  font-family: 'Courgette', cursive;
+}
+
+nav {
+  font-family: 'Courgette', cursive;
+}
+
+.note {
+  color: var(--tertiary);
 }
