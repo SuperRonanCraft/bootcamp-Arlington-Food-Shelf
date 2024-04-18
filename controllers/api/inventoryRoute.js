@@ -2,6 +2,7 @@
 const router = require('express').Router();
 // Importing the Inventory model from the models/index file
 const { Inventory } = require('../../models/index');
+// Importing the inventoryData helper function from the utils/helpers file
 const { inventoryData } = require('../../utils/helpers');
 
 router.get('/', (req, res) => {
