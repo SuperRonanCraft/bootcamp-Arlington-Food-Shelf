@@ -59,6 +59,9 @@ function submitOrder(event) {
 
 function closeAlert(event) {
   event.target.parentElement.style.visibility = 'hidden';
+  const alertElement = document.getElementById(alertId);
+  alertElement.style.display =
+    alertElement.style.display === 'none' ? 'block' : 'none';
 }
 
 document.querySelector('#submit-order').addEventListener('click', submitOrder);
