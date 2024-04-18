@@ -22,5 +22,5 @@ if (process.env.DB_URL) {
     },
   );
 }
-
+// Exporting the Sequelize instance for use in other parts of the application
 module.exports = sequelize;
