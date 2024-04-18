@@ -9,6 +9,7 @@ const { orderData, orderMap } = require('../../utils/helpers');
 
 // Route to fetch all orders
 router.get('/', (req, res) => {
+  // Finding all orders and including associated data using orderData helper
   Order.findAll({
     include: orderData,
   }).then((data) => {
