@@ -9,6 +9,7 @@ if (process.env.DB_URL) {
   // Creating a Sequelize instance using the provided database URL
   sequelize = new Sequelize(process.env.DB_URL);
 } else {
+  // Creating a Sequelize instance with parameters for database connection
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
