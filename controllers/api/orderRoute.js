@@ -97,5 +97,5 @@ router.post('/', async (req, res) => {
     res.status(500).send(err);
   }
 });
-
+// Exporting the router module for use in other parts of the application
 module.exports = router;
