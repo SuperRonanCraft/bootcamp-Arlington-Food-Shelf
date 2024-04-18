@@ -73,6 +73,7 @@ router.post('/', async (req, res) => {
         };
         orderArray.push(itemObj);
       }
+      // Bulk creating order items associated with the newly created order
       await OrderItem.bulkCreate(orderArray, {
         transaction: t,
       });
