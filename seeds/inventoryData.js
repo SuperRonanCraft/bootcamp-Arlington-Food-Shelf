@@ -8,11 +8,12 @@ const data = [
   },
   {
     name: 'Potato',
-    description: 'Freah Idaho Potato',
+    description: 'Fresh Idaho Potato',
     picture: 'potato.jpg',
   },
   {
     name: 'Lemon',
+    description: 'Fresh Lemon',
     picture: 'lemon.jpg',
   },
   {
