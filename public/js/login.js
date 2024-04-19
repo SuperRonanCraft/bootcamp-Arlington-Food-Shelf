@@ -1,3 +1,6 @@
+const loginAlert = document.querySelector('#alert-login');
+const signupAlert = document.querySelector('#alert-signup');
+
 //Login Event
 const login = async (event) => {
   event.preventDefault();
@@ -21,7 +24,7 @@ const login = async (event) => {
     } else {
       console.log(response);
       console.log(email, password);
-      alert('Faileh to login!');
+      loginAlert.style.visibility = 'visible';
     }
   }
 };
@@ -37,18 +40,22 @@ const signup = async (event) => {
 
   // Send a POST request to the API endpoint
   if (name && password && email) {
-    const response = await fetch('/api/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password }),
-    });
-    // If successful, redirect the browser to the homepage
+    try {
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password }),
+      });
+      // If successful, redirect the browser to the homepage
 
-    if (response.ok) {
-      document.location.replace('/');
-      // If not successful, alert the user
-    } else {
-      alert('Error occured creating account!');
+      if (response.ok) {
+        document.location.replace('/');
+        // If not successful, alert the user
+      } else {
+        signupAlert.style.visibility = 'visible';
+      }
+    } catch (err) {
+      console(err);
     }
   }
 };

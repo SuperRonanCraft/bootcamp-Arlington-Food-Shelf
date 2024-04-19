@@ -1,8 +1,27 @@
+{{! Login Alert }}
+<div class='container-fluid alert alert-danger p-1' id='alert-login'>
+  <button
+    type='button'
+    class='btn close-btn'
+    onclick="closeAlert('alert-login')"
+  >x</button>
+  <span><strong>Error!</strong> Failed to login, invalid email/password!</span>
+</div>
+{{! Signup Alert }}
+<div class='container-fluid alert alert-danger p-1' id='alert-signup'>
+  <button
+    type='button'
+    class='btn close-btn'
+    onclick="closeAlert('alert-signup')"
+  >x</button>
+  <span><strong>Error!</strong>
+    Failed to signup! Please contact support if this persists!</span>
+</div>
 <div class='container'>
   <div class='row'>
     {{! Login Form }}
     <dir class='col-sm-12 col-md-5 card'>
-      <h1 class='card-title'>Login</h1>
+      <h1 class='card-title' id='login-container'>Login</h1>
       <form id='login' class='card-body'>
         <div class='form-group'>
           <label class='fs-3' for='login-email'>Email</label>
@@ -12,6 +31,7 @@
             id='login-email'
             placeholder='john@doe.com'
             autocomplete='username'
+            required
           />
         </div>
 
@@ -22,14 +42,11 @@
             class='form-control'
             id='login-password'
             autocomplete='current-password'
+            required
           />
         </div>
 
-        <button
-          type='submit'
-          id='button-login'
-          class='btn btn-primary mt-2'
-        >Login</button>
+        <button type='submit' id='button-login' class='btn mt-2'>Login</button>
 
       </form>
     </dir>
@@ -37,7 +54,7 @@
     <div class='col-md-2 col-sm-12'></div>
     {{! Signup Form }}
     <dir class='col-sm-12 col-md-5 card'>
-      <h1 class='card-title'>Create Account</h1>
+      <h1 class='card-title' id='signup-container'>Create Account</h1>
       <form id='signup' class='card-body'>
         <div class='form-group'>
           <label class='fs-3' for='signup-name'>Full Name</label>
@@ -46,6 +63,7 @@
             class='form-control'
             id='signup-name'
             placeholder='John Doe'
+            required
           />
         </div>
         <div class='form-group'>
@@ -55,11 +73,17 @@
             class='form-control'
             id='signup-email'
             placeholder='john@doe.com'
+            required
           />
         </div>
         <div class='form-group'>
           <label class='fs-3' for='signup-password'>Password</label>
-          <input type='password' class='form-control' id='signup-password' />
+          <input
+            type='password'
+            class='form-control'
+            id='signup-password'
+            required
+          />
         </div>
 
         <button
@@ -73,3 +97,4 @@
   </div>
 </div>
 <script src='/js/login.js'></script>
+<script src='/js/alerts.js'></script>

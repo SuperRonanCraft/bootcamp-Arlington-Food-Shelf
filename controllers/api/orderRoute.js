@@ -13,16 +13,20 @@ router.get('/', (req, res) => {
   });
 });
 
+//Delete an order
 router.delete('/:id', async (req, res) => {
   try {
-    const deleted = await Order.destroy({ where: { id: req.params.id } });
-    res.status(200).json({ deleted: deleted >= 1 ? true : false });
+    const deletedOrder = await Order.destroy({ where: { id: req.params.id } });
+    res
+      .status(200)
+      .json({ deleted: deletedOrder >= 1 ? true : false, deletedOrder });
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
   }
 });
 
+//Create a new Order
 router.post('/', async (req, res) => {
   if (!req.session.user_id) {
     res.status(404).json({
