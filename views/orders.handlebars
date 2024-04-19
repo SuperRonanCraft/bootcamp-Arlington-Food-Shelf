@@ -5,18 +5,26 @@
   {{#if orders}}
     <div class='row'>
       {{#each orders as |order|}}
-        <div class='container col-12 mb-2 card'>
-          <div class='row'>
-
-            <h2 class='col-6 card-title'>Order #{{id}}</h2>
-            <p class='col-6 text-end'>
-              x{{total_items}}</p>
+        <div class='container col-12 mb-0 card bg-dark'>
+          <div class='row mb-2 card-title'>
+            <h2 class='col-sm-12 col-md-6'>Order #{{id}}</h2>
+            <div class="col-sm-12 col-md-6 text-end">
+              <p class="m-1">
+                x{{total_items}} items
+              </p>
+              <p class="m-1">
+                Created: {{format_date createdAt}}
+              </p>
+            </div>
           </div>
-          <div class='card-body'>
-            {{#each orderItems as |item|}}
-              <span class='fs-3'>{{inventory.name}}</span>
-              <span class='fs-5'>x{{stock}},</span>
-            {{/each}}
+          <div class="card-body">
+            <div class="container">
+              <div class="row mt-0">
+                {{#each orderItems as |item|}}
+                  {{> card item.inventory show_items='false' stock=item.stock}}
+                {{/each}}
+              </div>
+            </div>
           </div>
         </div>
       {{/each}}
