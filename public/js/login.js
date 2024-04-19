@@ -19,7 +19,7 @@ const login = async (event) => {
     // If successful, redirect the browser to the homepage
 
     if (response.ok) {
-      document.location.replace('/');
+      setTimeout(() => document.location.replace('/stock'), 500);
       // If not successful, alert the user
     } else {
       console.log(response);
@@ -49,7 +49,7 @@ const signup = async (event) => {
       // If successful, redirect the browser to the homepage
 
       if (response.ok) {
-        document.location.replace('/');
+        setTimeout(() => document.location.replace('/stock'), 500);
         // If not successful, alert the user
       } else {
         signupAlert.style.visibility = 'visible';
