@@ -47,7 +47,7 @@ const data = [
     picture: 'banana.png',
   },
   {
-    name: 'Tomatoe',
+    name: 'Tomato',
     stock: '6',
     description: 'Locally picked and fresh 1lb bag',
     picture: 'tomatoe.png',
