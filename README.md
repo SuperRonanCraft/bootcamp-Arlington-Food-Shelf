@@ -1,28 +1,44 @@
-# bootcamp-project-2
+## Arlington Food Shelf
 
-# Arlington Food Shelf
+### Description
 
-  ## Description
-  This Webpage has functionality of login in the page to buy products which are available in the Arlington Food Shelf.  It has 7 pages/routes, for home, stocks, resources, my orders, about and login/singup.
+The Arlington Food Shelf is an organization in Arlington, VT. that provides food free of charge to anyone in need. They've been providing this service without any real way to communicate to their customers what food is available or what they can select to place an order for pick up later in the day.
 
-  ## Usage
-  Arlington Food Shelf webpage is useful for people living around the store to get food products easily through online. 
+### Usage
 
-  ## Installation
-  NA
+Now the organization has an official page: https://arlingtonfoodshelf.com/
+They can use this to provide various services such as:
 
-  ## Requirements
-  Express, Express-Session, Sequelize, Google-Map etc.
+- What foods are currently in stock
+- User sign in to place an order
+- Providing various other resources for those in need
+- An official page to communicate with the community
 
-  ## Contributors
-  NA
+### Homepage Screenshot
 
-  ## Testing
-  ```
-  NA
-  ```
-  ## License
+![Homepage Screenshot](./assets/screenshot.png)
+
+### Requirements
+
+The website was built using:
+
+- Express
+- Express-Session
+- Sequelize
+- Google-Map API
+- Handlebars
+- Bootstrap
+
+### Contributors
+
+The team consisted of:
+
+- @Pematamang111
+- @SuperRonanCraft
+- @Stewpra
+- @vpontual
+- @norashala
+
+### License
+
     Licensed under the MIT License license.
-
-  ## Screenshots
-  ![alt text](<Screenshot (280).png>) ![alt text](<Screenshot (276).png>) ![alt text](<Screenshot (277).png>) ![alt text](<Screenshot (278).png>) ![alt text](<Screenshot (279).png>)
