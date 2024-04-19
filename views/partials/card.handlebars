@@ -9,28 +9,36 @@
       <div class='stock-info text-center text-light h-100 d-flex flex-column'>
         <h2>{{name}}</h2>
         {{description}}
-        {{allergens}}
-        {{categories}}
+        {{!-- {{allergens}}
+        {{categories}} --}}
         {{#if @root.loggedIn}}
-          {{! Inputs }}
-          <div class='text-center mx-2 mt-auto mb-2'>
-            <label class='btn btn-secondary m-2'>
-              <input data-id='{{id}}' type='checkbox' name='selected' />
-              Select
-            </label>
-            <select class='form-select' aria-label='select'>
-              <option value='0' selected>Select Quantity...</option>
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-            </select>
-          </div>
+          {{#unless show_items}}
+            {{! Inputs }}
+            <div class='text-center mx-2 mt-auto mb-2'>
+              <label class='btn btn-secondary m-2'>
+                <input data-id='{{id}}' type='checkbox' name='selected' />
+                Select
+              </label>
+              <select class='form-select' aria-label='select'>
+                <option value='0' selected>Select Quantity...</option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+              </select>
+            </div>
+          {{else}}
+            <div class='position-relative h-100'>
+              <p
+                class='position-absolute text-end mx-2 bottom-0 end-0'
+              >x{{stock}}</p>
+            </div>
+          {{/unless}}
         {{/if}}
       </div>
     </div>
